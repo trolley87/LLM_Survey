@@ -4,8 +4,8 @@ import json
 # Read the input data from DDModeChoice.txt
 data = pd.read_csv('inputData/DDModeChoice.txt', sep='\t')
 # Save the DataFrame as a .csv file
-data.to_csv('DF_TransChoice.csv', index=False, header=True)
-df = pd.read_csv('DF_TransChoice.csv')
+data.to_csv('inputData/DF_TransChoice.csv', index=False, header=True)
+df = pd.read_csv('inputData/DF_TransChoice.csv')
 df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
 
 # What is CB? The city bike station? or student's home?
