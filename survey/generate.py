@@ -2,6 +2,7 @@ from prompt import *
 import pandas as pd
 
 def convert5():
+    # Insert the code that generates the prompts based on paper #5 survey data
     pass
 
 def convert41():
@@ -58,6 +59,7 @@ def convert23():
     pass
 
 def main():
+    # Maybe in future we can use command line arguments to specify which papers we convert
     convert5()
     convert41()
     convert9()
