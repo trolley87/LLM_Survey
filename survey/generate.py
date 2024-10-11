@@ -24,7 +24,9 @@ def convert21():
     pass
 
 def convert29():
-    pass
+    df = pd.read_stata("datasets/29.dta")
+    with open("output/29.csv", "w",  encoding="utf-8", newline = '') as outfile:
+        df.to_csv(outfile, index = False)
 
 def convert38():
     pass
@@ -71,7 +73,7 @@ def main():
     convert38()
     convert39()
     convert24()
-    convert27()
+    #convert27()
     convert22()
     convert23()
 

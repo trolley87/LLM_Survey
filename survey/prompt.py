@@ -17,6 +17,7 @@ Pay for energy
 Pay for car
 24. 
 27. Role of fuel cost info in car sales
+    coefficients on page 8
 Health
 22. Population preferencesfor breast cancer screening
 23. Preferences for HIV testing services
