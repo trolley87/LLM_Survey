@@ -1,4 +1,4 @@
-''' Papers:
+''' Papers (Gabriel does papers 29, 38, 39, 24, , 27, 22, and 23. Parisa does others):
 Mode choice:
 5. Ride to the hills, ride to your school
 41. Travel to school mode choice
@@ -23,6 +23,7 @@ Health
 23. Preferences for HIV testing services
 '''
 
+# Map paper number label to its prompt template
 prompt_templates = {
     5: "",
     41: "",
@@ -31,8 +32,15 @@ prompt_templates = {
     14: "",
     15: "",
     21: "",
-    29: "",
-    38: "",
+    29: "", # SKIPPED: DATASET IS IN GERMAN
+    38: "You are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. The attributes of each plan are as follows: \
+- Plan 1 will cost you ${price1} per month, while Plan 2 will cost you ${price2} per month. \
+- Compared to your current energy plan, Plan 1 will result in {gas1}% lower emissions, while Plan 2 will result in {gas2}% lower emissions. \
+- For both Plan 1 and Plan 2, 10% of your energy will be derived from hydroelectic sources. \
+- For Plan 1, {nuc1}% of your energy will be derived from nuclear sources. For Plan 2, {nuc2}% of your energy will be derived from nuclear sources. \
+- For Plan 1, {ren1}% of your energy will be derived from renewable sources. For Plan 2, {ren2}% of your energy will be derived from renewable sources. \
+- For Plan 1, the remaining {fos1}% of your energy will be derived from fossil fuels. For Plan 2, the remaining {fos2}% of your fuel will be derived from fossil fuels. \
+Based on these attributes, which energy plan would you prefer?",
     39: "",
     24: "",
     27: "Suppose you are a person deciding on a new car to purchase. You have two cars to choose from. \
