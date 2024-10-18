@@ -1,4 +1,4 @@
-''' Papers:
+''' Papers (Gabriel does papers 29, 38, 39, 24, , 27, 22, and 23. Parisa does others):
 Mode choice:
 5. Ride to the hills, ride to your school
 41. Travel to school mode choice
@@ -17,11 +17,13 @@ Pay for energy
 Pay for car
 24. 
 27. Role of fuel cost info in car sales
+    coefficients on page 8
 Health
 22. Population preferencesfor breast cancer screening
 23. Preferences for HIV testing services
 '''
 
+# Map paper number label to its prompt template
 prompt_templates = {
     5:  """You are a student deciding how to travel to school. Consider the following factors:
 
@@ -68,16 +70,16 @@ Based on the influence of the above variables, what is your commuting mode choic
 #- Environmental awareness
 #- Consumption habits
 #- Other relevant attributes
-    9: """Willingness-to-pay(WTP) for sustainable beer is binary, where a value of 1 indicates that customers are willing to pay for sustainable beer, and a value of 0 indicates that they are not. WTP(0 or 1)
-How does the WTP for sustainable beer vary across different independent variables? Consider the following aspects:
-- Demographic factors (e.g., age, gender, education, political leaning, marital status, household residency, and whether the respondent lives in a rural, urban, or suburban setting.):
-The age of the respondent is {age_category}.  
-The educational attainment of the respondent is as follows: {education_summary}.
-The income is {income_summary}
+#- Demographic factors (e.g., age, gender, education, political leaning, marital status, household residency, and whether you live in a rural, urban, or suburban setting):
+    9: """Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. 
+How does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:
+Your age category is {age_category}.  
+Your educational attainment is as follows: {education_summary}.
+Your income is {income_summary}.
 
-Recycling behavior: whether the respondent recycles (Recycle_Yes).
-Number of beers respondent reports consuming {buying_descriptions}
-The respondent has indicated the following regarding their environmental contributions: {environmental_contribution_descriptions}.
+Recycling behavior: whether you recycle (Recycle_Yes).
+Number of beers you report consuming: {buying_descriptions}.
+You have indicated the following regarding your environmental contributions: {environmental_contribution_descriptions}.
 Respond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.
 
   """,
@@ -87,8 +89,15 @@ Respond with 1 if you are willing to pay for sustainable beer, and a value of 0 
     14: "",
     15: "",
     21: "",
-    29: "",
-    38: "",
+    29: "", # SKIPPED: DATASET IS IN GERMAN
+    38: "You are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. The attributes of each plan are as follows: \
+- Plan 1 will cost you ${price1} per month, while Plan 2 will cost you ${price2} per month. \
+- Compared to your current energy plan, Plan 1 will result in {gas1}% lower emissions, while Plan 2 will result in {gas2}% lower emissions. \
+- For both Plan 1 and Plan 2, 10% of your energy will be derived from hydroelectic sources. \
+- For Plan 1, {nuc1}% of your energy will be derived from nuclear sources. For Plan 2, {nuc2}% of your energy will be derived from nuclear sources. \
+- For Plan 1, {ren1}% of your energy will be derived from renewable sources. For Plan 2, {ren2}% of your energy will be derived from renewable sources. \
+- For Plan 1, the remaining {fos1}% of your energy will be derived from fossil fuels. For Plan 2, the remaining {fos2}% of your fuel will be derived from fossil fuels. \
+Based on these attributes, which energy plan would you prefer?",
     39: "",
     24: "",
     27: "Suppose you are a person deciding on a new car to purchase. You have two cars to choose from. \

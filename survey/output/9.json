@@ -1,0 +1,602 @@
+[
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer 2 to 3 times per month.\nYou have indicated the following regarding your environmental contributions: Prefers not to answer about environmental contribution.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 21 to 24.  \nYour educational attainment is as follows: High School.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: Contributes to environmental causes.\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Some College Education (No Degree).\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer less than once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 65 and above.  \nYour educational attainment is as follows: Associate's or Bachelor's Degree.\nYour income is Income $50,000 to $74,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer once per month.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 35 to 44.  \nYour educational attainment is as follows: Graduate Degree.\nYour income is Income $75,000 to $99,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 35 to 44.  \nYour educational attainment is as follows: Graduate Degree.\nYour income is Income $75,000 to $99,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 35 to 44.  \nYour educational attainment is as follows: Graduate Degree.\nYour income is Income $75,000 to $99,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Not willing to pay for sustainable beer (in $/oz)."
+    }
+  },
+  {
+    "input": "Willingness-to-pay (WTP) for sustainable beer is binary WTP (0 or 1), where a value of 1 indicates that you are willing to pay for sustainable beer, and a value of 0 indicates that you are not. \nHow does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:\nYour age category is Age 35 to 44.  \nYour educational attainment is as follows: Graduate Degree.\nYour income is Income $75,000 to $99,999.\n\nRecycling behavior: whether you recycle (Recycle_Yes).\nNumber of beers you report consuming: Buys beer weekly.\nYou have indicated the following regarding your environmental contributions: .\nRespond with 1 if you are willing to pay for sustainable beer, and a value of 0 if you are not.\n\n  ",
+    "output": {
+      "choice_WTP": "Willing to pay for sustainable beer (in $/oz)."
+    }
+  }
+]
