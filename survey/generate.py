@@ -142,22 +142,172 @@ def convert22():
 def convert23():
     pass
 
+def convert41():
+    data = pd.read_csv('datasets/41.csv', delimiter='\t')  # Specify tab as the delimiter
+    data.columns = data.columns.str.strip()  # Remove leading/trailing spaces
+    print(data.columns) 
+    choice_map = {1: "walking", 2: "cycling", 3: "public transport", 4: "car/ motorcycle"} 
+    car_avail_map = {0: "available all time", 1: "available not all time"} # Car availability equals one, if the student has the possibility of commuting to school by car every day.
+    season_map = {1: "Summer season/fair weather", 0: "Winter season/bad weather"}
+
+    def create_json_prompt(row):
+        distance_str = round(row['Distance'], 2)
+        car_avail_str = car_avail_map[row['CarAvail']]
+        season_str = season_map[row['Season']]
+        choice_str = choice_map[row['Choice']]
+   
+        formatted_prompt = prompt_templates[41].format(
+            distance=f"{distance_str} KM",
+            age= row['Age'], #paper page#9 aged between 10 and 19 years
+            car_availability= car_avail_str,
+            season= season_str
+        )
+    
+    # Structure the prompt and result as a dictionary (JSON-like structure)
+        json_prompt = {
+            "input": formatted_prompt,
+             "output": {
+                "choice": choice_str
+        }
+    }
+        return json_prompt 
+    json_prompts = []
+
+    for _, row in data.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    print(json_output)
+
+    with open('output/41.json', 'w') as f:
+        f.write(json_output)
+
+    pass
+
+def convert9():
+    data = pd.read_csv('datasets/9. Beer Data Full Dataset.csv')
+    print(data.columns.tolist())  # Print column names for verification
+    choice_map = {
+        1: "Willing to pay for sustainable beer (in $/oz).",
+        0: "Not willing to pay for sustainable beer (in $/oz)."
+    }
+    def create_json_prompt(row):
+        if row['Age_sub21']:
+            age_category = "Age under 21"
+        elif row['Age_21to24']:
+            age_category = "Age 21 to 24"
+        elif row['Age_25to34']:
+            age_category = "Age 25 to 34"
+        elif row['Age_35to44']:
+            age_category = "Age 35 to 44"
+        elif row['Age_45to54']:
+            age_category = "Age 45 to 54"
+        elif row['Age_55to64']:
+            age_category = "Age 55 to 64"
+        elif row['Age_65plus']:
+            age_category = "Age 65 and above"
+        else:
+            age_category = "Unknown age category"
+
+        if row['Educ_NoHSdip'] == 1:
+            education_descriptions = "Less than high school"
+        elif row['Educ_HSdip'] == 1:
+            education_descriptions = "High School"
+        elif row['Educ_College_NoDegree'] == 1:
+            education_descriptions = "Some College Education (No Degree)"
+        elif row['Educ_AAorBA'] == 1:
+            education_descriptions = "Associate's or Bachelor's Degree"
+        elif row['Educ_GradDegree'] == 1:
+            education_descriptions = "Graduate Degree"
+        else:
+            "No educational attainment specified"
+
+        if row['Income_0to24999'] == 1:
+            income_descriptions = "Income $0 to $24,999"
+        elif row['Income_25to49999'] == 1:
+            income_descriptions = "Income $25,000 to $49,999" 
+        elif row['Income_50to74999'] == 1:
+            income_descriptions = "Income $50,000 to $74,999"
+        elif row['Income_75to99999'] == 1:
+            income_descriptions = "Income $75,000 to $99,999" 
+        elif row['Income_100plus'] == 1:
+            income_descriptions = "Income $100,000 and above"
+        else:
+            "No income category specified"
+
+        if row['BuyBeer_Never'] == 1:
+            buying_descriptions = "Never buys beer"
+        elif row['BuyBeer_sub1permonth'] == 1:
+            buying_descriptions = "Buys beer less than once per month"
+        elif row['BuyBeer_1permonth'] == 1:
+            buying_descriptions = "Buys beer once per month"
+        elif row['BuyBeer_2or3permonth'] == 1:
+            buying_descriptions = "Buys beer 2 to 3 times per month" 
+        elif row['BuyBeer_Weekly'] == 1:
+            buying_descriptions = "Buys beer weekly" 
+        elif row['BuyBeer_PlusWeekly'] == 1:
+            buying_descriptions = "Buys beer more than once a week"
+        else:
+            "No buying frequency specified"
+        environmental_contribution = ""
+        # Extract environmental contribution
+        if row['EnvContribution_Yes'] == 1:
+            environmental_contribution = "Contributes to environmental causes"
+        elif row['EnvContribution_IDK'] == 1:
+            environmental_contribution = "Unsure about environmental contribution"
+        elif row['EnvContribution_PrefNoAnswer'] == 1:
+            environmental_contribution = "Prefers not to answer about environmental contribution"
+        else:
+            "No environmental contribution information specified"
+
+        choice_str = choice_map.get(row['Choice'], "Unknown choice")
+
+        formatted_prompt = prompt_templates[9].format(
+            age_category = age_category,
+            education_summary = education_descriptions,
+            income_summary = income_descriptions,
+            buying_descriptions = buying_descriptions,
+            environmental_contribution_descriptions = environmental_contribution
+    )
+
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "choice_WTP": choice_str
+            }
+        }
+        return json_prompt
+
+    json_prompts = []
+    limit = 100
+    for _, row in data.head(limit).iterrows(): 
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    print(json_output)
+
+    with open('output/9.json', 'w') as f:
+        f.write(json_output)
+
 def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     #convert5()
     #convert41()
     convert9()
-    convert26()
-    convert14()
-    convert15()
-    convert21()
-    #convert29() # SKIPPED: DATASET IS IN GERMAN
-    convert38()
-    convert39()
-    convert24()
-    #convert27()
-    convert22()
-    convert23()
-
+    #convert26()
+    #convert14()
+   # convert15()
+    #convert21()
+    #convert29()
+    #convert38()
+    #convert39()
+    #convert24()
+   # convert27()
+    #convert22()
+    #convert23()
 if __name__ == "__main__":
     main()
