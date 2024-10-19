@@ -137,7 +137,187 @@ def convert27():
         df.to_csv(outfile, index = False)
 
 def convert22():
-    pass
+    '''dataset explanation (page 10 of paper)
+        d_att1_2: you will be invited to the screening via:
+            1: telephone
+            0 :mailed letter
+        d_att2_2: when invited, you will
+            1: be able to get to your appointment right away
+            0: receive instructions on how to make an appointment
+        d_att3_2: when invited, you will receive
+            1: a detailed explanation of the screening
+            0: no explanation of screening
+        d_att4_2: the screening
+            1: will be combined with other relevant health visi
+            0: will not be combined with other health visits
+        d_att5_2:
+            1: Travel time to screening is 40 min
+            0: 20 min
+        d_att5_3:
+            1: Travel time to screening is 60 min
+            0: 20 min
+        d_att5_4:
+            1: Travel time to screening is 90 min
+            0: 20 min
+        d_att6_2: Waiting time at the screening will be
+            1: 40 min
+            0: 20 min
+        d_att6_3: Waiting time at the screening will be
+            1: 60 min
+            0: 20 min
+        d_att7_2: The doctor who will examine you is someone
+            1: you don't know or heard positively about
+            0: you know or heard positively about
+        d_att8_2: The screening will be performed via
+            1: mammography
+            0: manual examination
+        d_att8_3: The screening will be performed via
+            1: mammography and manual examination
+            0: manual examination only
+        d_att9_2: The screening will accurately detect cancer in
+            1: 70 out of 100 women
+            0: 60 out of 100 women
+        d_att9_3: The screening will accurately detect cancer in
+            1: 80 out of 100 women
+            0: 60 out of 100 women
+        d_att9_4: The screening will accurately detect cancer in
+            1: 90 out of 100 women
+            0: 60 out of 100 women
+        d_att10_2: Cost of the test is
+            1: 20 Belarus Rubles
+            0: free
+        d_att10_3 Cost of the test is
+            1: 40 Belarus Rubles
+            0: free
+    '''
+    brb_to_dollar = 0.31 # conversion of Belarus Rubles to USD as of 10/19/2024
+    df = pd.read_csv("datasets/22.csv")
+    df["Prompt"] = "" # add new Prompt column, defaults to empty string
+    with open("output/22.csv", "w", newline = '') as outfile:
+        for i in range(0, len(df.index), 3):
+            row1 = df.iloc[i]
+            row2 = df.iloc[i+1]
+
+            if row1["d_att1_2"] == 1:
+                invitation1_data = "a telephone call"
+            else:
+                invitation1_data = "a mailed letter"
+            if row2["d_att1_2"] == 1:
+                invitation2_data = "a telephone call"
+            else:
+                invitation2_data = "a mailed letter"
+
+            if row1["d_att2_2"] == 1:
+                appt1_data = "be able to go to your appointment immediately"
+            else:
+                appt1_data = "be given instructions for scheduling your appointment"
+            if row2["d_att2_2"] == 1:
+                appt2_data = "be able to go to your appointment immediately"
+            else:
+                appt2_data = "be given instructions for scheduling your appointment"
+
+            if row1["d_att3_2"] == 1:
+                detail1_data = "a detailed"
+            else:
+                detail1_data = "no"
+            if row2["d_att3_2"] == 1:
+                detail2_data = "a detailed"
+            else:
+                detail2_data = "no"
+
+            if row1["d_att4_2"] == 1:
+                combine1_data = "will"
+            else:
+                combine1_data = "will not"
+            if row2["d_att4_2"] == 1:
+                combine2_data = "will"
+            else:
+                combine2_data = "will not"
+
+            travel_time1_data = "20"
+            if row1["d_att5_2"] == 1:
+                travel_time1_data = "40"
+            elif row1["d_att5_3"] == 1:
+                travel_time1_data = "60"
+            elif row1["d_att5_4"] == 1:
+                travel_time1_data = "90"
+            travel_time2 = "20"
+            if row2["d_att5_2"] == 1:
+                travel_time2_data = "40"
+            elif row2["d_att5_3"] == 1:
+                travel_time2_data = "60"
+            elif row2["d_att5_4"] == 1:
+                travel_time2_data = "90"
+
+            wait_time1_data = "20"
+            if row1["d_att6_2"] == 1:
+                wait_time1_data = "40"
+            elif row1["d_att6_3"] == 1:
+                wait_time1_data = "60"
+            wait_time2_data = "20"
+            if row2["d_att6_2"] == 1:
+                wait_time2_data = "40"
+            elif row2["d_att6_3"] == 1:
+                wait_time2_data = "60"
+
+            if row1["d_att7_2"] == 1:
+                doctor1_data = "you never met or heard positively of before"
+            else:
+                doctor1_data = "you know or heard positively about"
+            if row2["d_att7_2"] == 1:
+                doctor2_data = "you never met or heard positively of before"
+            else:
+                doctor2_data = "you know or heard positively about"
+
+            examine1_data = "by manual examination"
+            if row1["d_att8_2"] == 1:
+                examine1_data = "by mammography"
+            elif row1["d_att8_3"] == 1:
+                examine1_data = "by mammography and manual examination"
+            examine2_data = "by manual examination"
+            if row2["d_att8_2"] == 1:
+                examine2_data = "by mammography"
+            elif row2["d_att8_3"] == 1:
+                examine2_data = "by mammography and manual examination"
+
+            accuracy1_data = "60"
+            if row1["d_att9_2"] == 1:
+                accuracy1_data = "70"
+            elif row1["d_att9_3"] == 1:
+                accuracy1_data = "80"
+            elif row1["d_att9_4"] == 1:
+                accuracy1_data = "90"
+            accuracy2_data = "60"
+            if row2["d_att9_2"] == 1:
+                accuracy2_data = "70"
+            elif row2["d_att9_3"] == 1:
+                accuracy2_data = "80"
+            elif row2["d_att9_4"] == 1:
+                accuracy2_data = "90"
+
+            cost1_data = "nothing"
+            if row1["d_att10_2"] == 1:
+                cost1_data = str(int(20 * brb_to_dollar)) + " dollars"
+            elif row1["d_att10_3"] == 1:
+                cost1_data = str(int(40 * brb_to_dollar)) + " dollars"
+            cost2_data = "nothing"
+            if row2["d_att10_2"] == 1:
+                cost2_data = str(int(20 * brb_to_dollar)) + " dollars"
+            elif row2["d_att10_3"] == 1:
+                cost2_data = str(int(40 * brb_to_dollar)) + " dollars"
+
+            prompt = prompt_templates[22].format(invitation1=invitation1_data, invitation2=invitation2_data,
+                                                 appt1=appt1_data, appt2=appt2_data,
+                                                 detail1=detail1_data, detail2=detail2_data,
+                                                 combine1=combine1_data, combine2=combine2_data,
+                                                 travel_time1=travel_time1_data, travel_time2=travel_time2_data,
+                                                 wait_time1=wait_time1_data, wait_time2=wait_time2_data,
+                                                 doctor1=doctor1_data, doctor2=doctor2_data,
+                                                 examine1=examine1_data, examine2=examine2_data,
+                                                 accuracy1=accuracy1_data, accuracy2=accuracy2_data,
+                                                 cost1=cost1_data, cost2=cost2_data)
+            df.at[i+2,"Prompt"] = prompt
+        df.to_csv(outfile, index = False)
 
 def convert23():
     pass
@@ -297,21 +477,18 @@ def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     #convert5()
     #convert41()
-    convert9()
+    #convert9()
     #convert26()
     #convert14()
-   # convert15()
+    #convert15()
     #convert21()
     #convert29()
     #convert38()
     #convert39()
     #convert24()
-   # convert27()
-    #convert22()
+    #convert27()
+    convert22()
     #convert23()
-<<<<<<< HEAD
-=======
 
->>>>>>> 74e245cd5ee90fa4e5ac6de3181bdf3d5ee409c7
 if __name__ == "__main__":
     main()
