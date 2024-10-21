@@ -114,7 +114,96 @@ def convert38():
             df.to_csv(outfile, index = False)
 
 def convert39():
-    pass
+    '''dataset explanation
+        25440 rows
+        state_code: UP = Uttar Pradesh; UK = Uttarakhand
+        female_hh: 0 if head of household (HH) is male, 1 if female
+        educhh: HH number of years of education
+
+        price - price of the stove in Rupees
+        fuel - number of units of fuel required to power the stove
+        smoke - number of units of smoke emitted by the stove
+        pots - number of burners on the stove
+            note: for fuel and smoke, 1 unit corresponds to a 33% decrease for smoke emissions and fuel requirement
+    '''
+    state_code_mappings = {
+        "UP": "Uttar Pradesh",
+        "UK": "Uttarakhand"
+    }
+    df = pd.read_csv("datasets/39.csv")
+    df["Prompt"] = "" # add new Prompt column, defaults to empty string
+    with open("output/39.csv", "w", newline = '') as outfile:
+        for i in range(0, len(df.index), 3):
+            row1 = df.iloc[i]
+            row2 = df.iloc[i+1]
+            row3 = df.iloc[i+2]
+
+            # skip rows where fuel consumption is blank
+            if pd.isna(row1["fuel"]) or pd.isna(row2["fuel"]) or pd.isna(row3["fuel"]):
+                continue
+
+            state_data = state_code_mappings[row1["state_code"]]
+            
+            pots1_data = int(row1["pots"])
+            pots2_data = int(row2["pots"])
+            pots3_data = int(row3["pots"])
+
+            fuel1 = int(row1["fuel"])
+            fuel2 = int(row2["fuel"])
+            fuel3 = int(row3["fuel"])
+
+            #print(str(fuel1) + " " + str(fuel2) + " " + str(fuel3))
+
+            smoke1 = int(row1["smoke"])
+            smoke2 = int(row2["smoke"])
+            smoke3 = int(row3["smoke"])
+
+            if fuel3 > fuel1:
+                fuel1_diff = (fuel3 - fuel1) * 33
+                fuel1_data = str(fuel1_diff)  + "% less fuel than"
+            elif fuel3 < fuel1:
+                fuel1_diff = (fuel1 - fuel3) * 33
+                fuel1_data = str(fuel1_diff) + "% more fuel than"
+            else:
+                fuel1_data = "the same amount of fuel as"
+
+            if fuel3 > fuel2:
+                fuel2_diff = (fuel3 - fuel2) * 33
+                fuel2_data = str(fuel2_diff) + "% less fuel than"
+            elif fuel3 < fuel2:
+                fuel2_diff = (fuel2 - fuel3) * 33
+                fuel2_data = str(fuel2_diff) + "% more fuel than"
+            else:
+                fuel2_data = "the same amount of fuel as"
+
+            if smoke3 > smoke1:
+                smoke1_diff = (smoke3 - smoke1) * 33
+                smoke1_data = str(smoke1_diff) + "% less smoke than"
+            elif smoke3 < smoke1:
+                smoke1_diff = (smoke1 - smoke3) * 33
+                smoke1_data = str(smoke1_diff) + "% more smoke than"
+            else:
+                smoke1_data = "the same amount of smoke as"
+
+            if smoke3 > smoke2:
+                smoke2_diff = (smoke3 - smoke2) * 33
+                smoke2_data = str(smoke2_diff) + "% less smoke than"
+            elif smoke3 < smoke2:
+                smoke2_diff = (smoke2 - smoke3) * 33
+                smoke2_data = str(smoke2_diff) + "% more smoke than"
+            else:
+                smoke2_data = "the same amount of smoke as"
+
+            prompt = prompt_templates[39].format(state=state_data,
+                                                 pots1=pots1_data, pots2=pots2_data, pots3=pots3_data,
+                                                 price1=int(row1["price"]),price2=int(row2["price"]),
+                                                 fuel1=fuel1_data,fuel2=fuel2_data,
+                                                 smoke1=smoke1_data,smoke2=smoke2_data)
+
+            df.at[i+2,"Prompt"] = prompt
+        df.to_csv(outfile, index = False)
+
+
 
 def convert24():
     pass
@@ -320,7 +409,17 @@ def convert22():
         df.to_csv(outfile, index = False)
 
 def convert23():
-    pass
+    '''dataset explanation
+    22320 rows
+    Participants were presented with a series of HIV testing plan questions
+    For each question, there were two plans for them to choose from, or they could opt out of testing entirely
+    Plan A is always a remote test, done from the participant's home
+    Plan B is done at a public location
+    attributes:
+        eS, eH, dS, dH
+    '''
+    df = pd.read_csv("datasets/23.csv")
+
 
 def convert41():
     data = pd.read_csv('datasets/41.csv', delimiter='\t')  # Specify tab as the delimiter
@@ -484,10 +583,10 @@ def main():
     #convert21()
     #convert29()
     #convert38()
-    #convert39()
+    convert39()
     #convert24()
     #convert27()
-    convert22()
+    #convert22()
     #convert23()
 
 if __name__ == "__main__":

@@ -98,7 +98,13 @@ Respond with 1 if you are willing to pay for sustainable beer, and a value of 0 
 - For Plan 1, {ren1}% of your energy will be derived from renewable sources. For Plan 2, {ren2}% of your energy will be derived from renewable sources.
 - For Plan 1, the remaining {fos1}% of your energy will be derived from fossil fuels. For Plan 2, the remaining {fos2}% of your fuel will be derived from fossil fuels.
 Based on these attributes, which energy plan would you prefer?""",
-    39: "",
+    39: """"Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. This traditional stove has {pots3} burners.
+Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following attributes of the stoves:
+- Stove 1 costs {price1} Rupees, and Stove 2 costs {price2} Rupees.
+- Stove 1 consumes {fuel1} your current stove, and Stove 2 consumes {fuel2} your current stove.
+- Stove 1 emits {smoke1} your current stove, and Stove 2 emits {smoke2} your current stove.
+- Stove 1 has {pots1} burners, and Stove 2 has {pots2} burners.
+Respond with 1 if you would purchase Stove 1, 2 if you would purchase Stove 2, or 3 if you would purchase neither stove.""",
     24: "",
     27: """Suppose you are a person deciding on a new car to purchase. You have two cars to choose from.
 - Car 1 costs {price1} dollars, and Car 2 costs {price2} dollars.
