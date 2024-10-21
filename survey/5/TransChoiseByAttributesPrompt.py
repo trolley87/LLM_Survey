@@ -21,13 +21,19 @@ prompt_template = """You are a student deciding how to travel to school. Conside
 - You are {age} years old and {gender}
 - {car_availability} is available for your use
 - It's currently {season}
+- Physical effort needed to bike to school is {effort} KJ
 
-Based on these factors, which mode of transportation would you choose?
+Based on these factors, which mode of transportation would you choose to maximize your personal utility?
 Respond with:
 1 for walk
 2 for bike
 3 for transit
-4 for car"""
+4 for car
+
+Please also rank the top 3 factors in your decision with the order of importance from the following:
+distance, school_location, grade, age, gender, car_availability, season, cb_location, same_shore, and effort.
+The output format is a list of string similar to: ['distance', 'school_location' ,'grade']
+"""
 # Map values to natural language for better understanding by LLMs
 choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"} #paper page#9 Based on Train (2009), we assume that student n chooses the alternative i = {walk, bike, transit, car} & p#13
 gender_map = {0: "male", 1: "female"}#paper page#9 table 2; = 1, if female otherwise 0
@@ -59,14 +65,15 @@ def create_json_prompt(row):
         season= season_str,
         cb_location= cb_location_str,
         same_shore= same_shore_str,
-        leistung= row['Leistung']
+        effort= row['Leistung']
     )
     
     # Structure the prompt and result as a dictionary (JSON-like structure)
     json_prompt = {
         "input": formatted_prompt,
         "output": {
-            "choice": choice_str
+            "choice": choice_str,
+            "factor_importance": ['', '', '']
         }
     }
     return json_prompt
@@ -86,5 +93,8 @@ json_output = json.dumps(json_prompts, indent=2)
 print(json_output)
 
 #save the JSON output to a file
-with open('transportation_choice_prompts.json', 'w') as f:
+with open('transportation_choice_prompts_v2.json', 'w') as f:
     f.write(json_output)
+
+
+
