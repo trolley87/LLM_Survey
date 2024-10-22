@@ -51,7 +51,89 @@ def convert26():
 def convert14():
     pass
 
-def convert15():
+def convert16():
+    data = pd.read_stata("datasets/16 IoT_DCE_Thermostats-PlosOne.dta")
+    pd.set_option('display.max_columns', None) 
+    print(data)  
+    print(data.head())
+    grouped_data = data.groupby('subject').size().reset_index(name='count')
+    print(grouped_data)
+    grouped_data_item = data.groupby('item').size().reset_index(name='count')
+    print(grouped_data_item)
+    grouped_data_alternative = data.groupby('alternative').size().reset_index(name='count')
+    print(grouped_data_alternative)
+    grouped_data_choicetask = data.groupby('choicetask').size().reset_index(name='count')
+    print(grouped_data_choicetask)
+
+
+    security_label_map = {0: "Does not have a security label", 1: "Has a security label"} 
+    functionality_map ={0: "Functoinality level of standard", 1: "Functoinality level of premium"}
+    education_map = {
+    1: "No formal qualifications",
+    2: "Secondary Education (GCSE/O-Levels)",
+    3: "Post-Secondary Education (College, A-Levels, NVQ3 or below, or similar)",
+    4: "Vocational Qualification (Diploma, Certificate, BTEC, NVQ 4 and above, or similar)",
+    5: "Undergraduate Degree (BA, BSc etc.)",
+    6: "Post-graduate Degree (MA, MSc etc.)",
+    7: "Doctorate (PhD, MD)"
+}
+    choice_map = {0: "not willing to pay for the IoT device", 1: "willing to pay for the IoT device"} 
+
+    def create_json_prompt(row):
+        security_label = security_label_map[row['label']],
+        functionality = functionality_map[row['function']],
+        if row['stproducttested'] == 'Camera':
+            device_name_map = "security camera"
+        elif row['stproducttested'] == 'Smart_TV':
+            device_name_map = "Smart TV"
+        elif row['stproducttested'] == 'Thermostat':
+            device_name_map = "smart thermostat"
+        elif row['stproducttested'] == 'Wearable':
+            device_name_map = "wearable"
+        else:
+            device_name_map = "unknown device" 
+        
+        if row['Female'] == 1:
+            gender_map = "female"
+        elif row['Male'] == 1:
+            gender_map = "male"
+        else:
+            gender_map = "unknown"
+
+        education_str = education_map[row['education']],
+        choice_str = choice_map[row['choice']]
+        
+        formatted_prompt = prompt_templates[16].format(
+            device_name = device_name_map,
+            security_label = security_label, 
+            functionality = functionality,
+            label_condition = row["condition"],
+            price = round(row['price'], 2),
+            age= row['age'], 
+            gender= gender_map,
+            education = education_str
+        )
+    
+    # Structure the prompt and result as a dictionary (JSON-like structure)
+        json_prompt = {
+            "input": formatted_prompt,
+             "output": {
+                "choice": choice_str
+        }
+    }
+        return json_prompt 
+    json_prompts = []
+
+    for _, row in data.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    #print(json_output)
+
+    with open('output/16.json', 'w') as f:
+        f.write(json_output)
     pass
 
 def convert21():
@@ -297,10 +379,10 @@ def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     #convert5()
     #convert41()
-    convert9()
+    #convert9()
     #convert26()
     #convert14()
-   # convert15()
+    convert16()
     #convert21()
     #convert29()
     #convert38()

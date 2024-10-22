@@ -18,7 +18,7 @@ Pay for car
 24. 
 27. Role of fuel cost info in car sales
     coefficients on page 8
-Health
+Healthtransportation
 22. Population preferencesfor breast cancer screening
 23. Preferences for HIV testing services
 '''
@@ -36,12 +36,36 @@ prompt_templates = {
 - {car_availability} is available for your use
 - It's currently {season}
 
-Based on these factors, which mode of transportation would you choose?
+Based on these factors, which mode of  would you choose?
 Respond with:
 1 for walk
 2 for bike
 3 for transit
 4 for car""",
+#16: four devices: security camera, Smart TV, smart thermostat, and a wearable
+#for price: there were five levels: baseline, 10%, 20%, 30% and 40% more expensive
+#Types of labelling:A graded labe #ndicate more or less “secure” devices
+#Choice sets. For every device type, we constructed choice sets for each participant. For each choice, which was intended to represent a purchasing decision, participants were asked to select from one of four options. Three of these described the features of a device (i.e. whether it had a label, the level of functionality and its price) while the fourth was an “opt out” that allowed participants to choose none of the options.
+ #For each option, there were 20 possible combinations of the three factors—2 (label or not) x 2 (standard or premium functionality) x 5 (price levels). As there were three options for each choice, this produces a total of (20x19x18/6 =) 1,140 possible (device) combinations for consumers to contrast, which is clearly too many.  
+    16:"""You are considering purchasing an IoT device, and the presence of security labels may influence your decision. There are other attributes, including device information and your demographics, that might affect your decision to buy or not buy an IoT device. Please consider the following options:
+Device information:
+_IoT device name is {device_name} 
+_The device {security_label} with A-G grading, where label A indicates a more secure device and lower labels indicate less security. 
+The device's security grade is {label_condition}.
+The device offers {functionality}.
+The IoT device  Price is ${price}
+
+Your Demographic Information:
+- Your age is {age} years old
+- Gender: {gender}
+- Education Level: {education}
+
+Please provide your feedback or indicate your choice of the device.
+
+
+
+ """,
+
     41: """We like to analyze the influence of the variables: distance, car availability, and season (or weather) on commuting mode choice. 
 Age is also considered as an explanatory variable, although it has been found to be not significant for public transport.
 - Distance to school is {distance} km.
