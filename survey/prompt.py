@@ -123,6 +123,16 @@ Respond with 1 if you would purchase Car 1, 2 if you would purchase Car 2, or 3 
 - 1: The doctor will examine your breast by {examine1}. 2: The doctor will examine your breast by {examine2}.
 - 1: The screening will accurately detect cancer in {accuracy1} out of 100 women. 2: The screening will accurately detect cancer in {accuracy2} out of 100 women.
 - 1: The screening will cost you {cost1}. 2: The screening will cost you {cost2}.
-""",
-    23: ""
+Are you more likely to choose Program 1, Program 2, or opt out of the screening entirely.""",
+    23: """Suppose you are a man who, yesterday, had condomless anal sex with someone whose HIV status you're unsure of. Consider the foilowing attributes of two differnt HIV testing plans: Test 1 and Test 2:
+- 1: You will have to wait {selfWindow} weeks before you can take the test. 2: You will have to wait 4 weeks before you can take the test.
+- 1: The test will be located somewhere conventient such as your home. 2: The test will be located at {HCPLoc}.
+- 1: The test will be taken using {selfSample}. 2: The test will be taken using {HCPSample}.
+- 1: You will obtain the test by {selfObtain}. 2: You will obtain the test by {HCPObtain}.
+- 1: {selfWait}. 2: {HCPWait}.
+- 1: {selfResults}. 2: {HCPResults}.
+- 1: The test is {selfAccuracy}% accurate. 2: The test is {HCPAccuracy}% accurate.
+- 1: You will {selfInfect}be able to test for other STI at the same time. 2: You will {HCPInfect}be able to test for other STI at the same time.
+- 1: The test will {selfCost}. 2: The test will be free.
+Are you more likely to choose Test 1, Test 2, or opt out of testing entirely?"""
  }
