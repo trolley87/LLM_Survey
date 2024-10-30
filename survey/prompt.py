@@ -90,49 +90,123 @@ Respond with 1 if you are willing to pay for sustainable beer, and a value of 0 
     15: "",
     21: "",
     29: "", # SKIPPED: DATASET IS IN GERMAN
-    38: """You are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. The attributes of each plan are as follows:
-- Plan 1 will cost you ${price1} per month, while Plan 2 will cost you ${price2} per month.
-- Compared to your current energy plan, Plan 1 will result in {gas1}% lower emissions, while Plan 2 will result in {gas2}% lower emissions.
-- For both Plan 1 and Plan 2, 10% of your energy will be derived from hydroelectic sources.
-- For Plan 1, {nuc1}% of your energy will be derived from nuclear sources. For Plan 2, {nuc2}% of your energy will be derived from nuclear sources.
-- For Plan 1, {ren1}% of your energy will be derived from renewable sources. For Plan 2, {ren2}% of your energy will be derived from renewable sources.
-- For Plan 1, the remaining {fos1}% of your energy will be derived from fossil fuels. For Plan 2, the remaining {fos2}% of your fuel will be derived from fossil fuels.
-Based on these attributes, which energy plan would you prefer?""",
-    39: """"Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. This traditional stove has {pots3} burners.
-Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following attributes of the stoves:
-- Stove 1 costs {price1} Rupees, and Stove 2 costs {price2} Rupees.
-- Stove 1 consumes {fuel1} your current stove, and Stove 2 consumes {fuel2} your current stove.
-- Stove 1 emits {smoke1} your current stove, and Stove 2 emits {smoke2} your current stove.
-- Stove 1 has {pots1} burners, and Stove 2 has {pots2} burners.
-Respond with 1 if you would purchase Stove 1, 2 if you would purchase Stove 2, or 3 if you would purchase neither stove.""",
-    24: "",
-    27: """Suppose you are a person deciding on a new car to purchase. You have two cars to choose from.
-- Car 1 costs {price1} dollars, and Car 2 costs {price2} dollars.
-- Car 1 has {capacity1} liters of storage space, and Car 2 has {capacity2} liters of storage space.
-- Car 1 uses {energy1} liters of gasoline per 10 km of travel, and Car 2 uses {energy2} liters of gasoline per 10 km of travel.
-- Car 1 achieves a safety score of {safety1}% based on the European New Car Assessment Programme, and Car 2 achieves a safety score of {safety2}% from the same test.
-Respond with 1 if you would purchase Car 1, 2 if you would purchase Car 2, or 3 if you would purchase neither car.""",
-    22: """Suppose you are a woman choosing between two different breast cancer screening programs: Program 1 and Program 2. Consider the following attributes of the programs:
-- 1: You will be invited to participate in the screening via a {invitation1}. 2: You will be invited via a {invitation2}.
-- 1: When invited, you will {appt1}. 2: When invited, you will {appt2}.
-- 1: The invitation will contain {detail1} explanation of the screening. 2: The invitation will contain {detail2} explanation of the screening.
-- 1: You {combine1} be able to combine this screening with other relevant health visits. 2: You {combine2} be able to combine this screening with other health visits.
-- 1: It will take {travel_time1} minutes to get to the clinic. 2: It will take {travel_time2} minutes to get to the clinic.
-- 1: In the clinic, you will have to wait in line for {wait_time1} minutes. 2: In the clinic, you will have to wait in line for {wait_time2} minutes.
-- 1: The doctor who examines you is someone {doctor1}. 2: The doctor who examines you is someone {doctor2}.
-- 1: The doctor will examine your breast by {examine1}. 2: The doctor will examine your breast by {examine2}.
-- 1: The screening will accurately detect cancer in {accuracy1} out of 100 women. 2: The screening will accurately detect cancer in {accuracy2} out of 100 women.
-- 1: The screening will cost you {cost1}. 2: The screening will cost you {cost2}.
-Are you more likely to choose Program 1, Program 2, or opt out of the screening entirely.""",
-    23: """Suppose you are a man who, yesterday, had condomless anal sex with someone whose HIV status you're unsure of. Consider the foilowing attributes of two differnt HIV testing plans: Test 1 and Test 2:
-- 1: You will have to wait {selfWindow} weeks before you can take the test. 2: You will have to wait 4 weeks before you can take the test.
-- 1: The test will be located somewhere conventient such as your home. 2: The test will be located at {HCPLoc}.
-- 1: The test will be taken using {selfSample}. 2: The test will be taken using {HCPSample}.
-- 1: You will obtain the test by {selfObtain}. 2: You will obtain the test by {HCPObtain}.
-- 1: {selfWait}. 2: {HCPWait}.
-- 1: {selfResults}. 2: {HCPResults}.
-- 1: The test is {selfAccuracy}% accurate. 2: The test is {HCPAccuracy}% accurate.
-- 1: You will {selfInfect}be able to test for other STI at the same time. 2: You will {HCPInfect}be able to test for other STI at the same time.
-- 1: The test will {selfCost}. 2: The test will be free.
-Are you more likely to choose Test 1, Test 2, or opt out of testing entirely?"""
+    38: """You are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. Consider the following factors:
+
+- cost: Plan 1 will cost you ${price1} per month. Plan 2 will cost you ${price2} per month.
+- emissions: Compared to your current energy plan, Plan 1 will result in {gas1}% lower emissions, while Plan 2 will result in {gas2}% lower emissions.
+- hydroelectric_energy: For both Plan 1 and Plan 2, 10% of your energy will be derived from hydroelectic sources.
+- nuclear_energy: For Plan 1, {nuc1}% of your energy will be derived from nuclear sources. For Plan 2, {nuc2}% of your energy will be derived from nuclear sources.
+- renewable_energy: For Plan 1, {ren1}% of your energy will be derived from renewable sources. For Plan 2, {ren2}% of your energy will be derived from renewable sources.
+- fossil_fuel_energy: For Plan 1, the remaining {fos1}% of your energy will be derived from fossil fuels. For Plan 2, the remaining {fos2}% of your fuel will be derived from fossil fuels.
+
+Based on these factors, which energy plan would you prefer? Respond with 1 or 2.
+
+Please also rank the top 3 factors in your decision in order of importance from the following:
+cost, emissions, hydroelectric_energy, nuclear_energy, renewable_energy, and fossil_fuel_energy.
+
+Output your result in JSON format, and do not output other information.
+{{
+  "energy_plan_choice": <plan>
+  "top_factors": [
+    "<factor_1>",
+    "<factor_2>",
+    "<factor_3>",
+  ]
+}}""",
+    39: """"Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following factors:
+
+- cost: Stove 1 costs {price1} Rupees. Stove 2 costs {price2} Rupees.
+- fuel_consumption: Stove 1 consumes {fuel1} your current stove. Stove 2 consumes {fuel2} your current stove.
+- smoke_emissions: Stove 1 emits {smoke1} your current stove. Stove 2 emits {smoke2} your current stove.
+- num_burners: Your current stove has {pots3} burners. Stove 1 has {pots1} burners. Stove 2 has {pots2} burners.
+
+Based on these factors, which stove would you prefer? Respond with 1 if you would purchase Stove 1, 2 if you would purchase Stove 2, or 3 if you would purchase neither stove.
+
+Please also rank the top 3 factors in your decision in order of importance from the following:
+cost, fuel_consumption, smoke_emissions, and num_burners.
+
+Output your result in JSON format, and do not output other information.
+{{
+  "stove_choice": <stove>
+  "top_factors": [
+    "<factor_1>",
+    "<factor_2>",
+    "<factor_3>",
+  ]
+}}""",
+    24: "", # SKIPPED: PAPER IS MISSING
+    27: """Suppose you are a person deciding on a new car to purchase. You have two cars to choose from: Car 1 and Car 2. Consider the following factors:
+
+- cost: Car 1 costs {price1} dollars. Car 2 costs {price2} dollars.
+- storage_space: Car 1 has {capacity1} liters of storage space. Car 2 has {capacity2} liters of storage space.
+- fuel_consumption: Car 1 uses {energy1} liters of gasoline per 10 km of travel. Car 2 uses {energy2} liters of gasoline per 10 km of travel.
+- safety_score: Car 1 achieves a safety score of {safety1}% based on the European New Car Assessment Programme. Car 2 achieves a safety score of {safety2}% from the same test.
+
+Based on these factors, which car would you choose? Respond with 1 if you would purchase Car 1, 2 if you would purchase Car 2, or 3 if you would purchase neither car.
+
+Please also rank the top 3 factors in your decision in order of importance from the following:
+cost, storage_space, fuel_consumption, and safety_score.
+
+Output your result in JSON format, and do not output other information.
+{{
+  "car_choice": <car>
+  "top_factors": [
+    "<factor_1>",
+    "<factor_2>",
+    "<factor_3>",
+  ]
+}}""",
+    22: """Suppose you are a woman choosing between two different breast cancer screening programs: Program 1 and Program 2. Consider the following factors:
+
+- invitation_modality: With Program 1, you will be invited to participate in the screening via a {invitation1}. With Program 2, you will be invited via a {invitation2}.
+- immediate_appt_arrangement_possibility: With Program 1, when invited, you will {appt1}. With Program 2, when invited, you will {appt2}.
+- explanation: Program 1's invitation will contain {detail1} explanation of the screening. Program 2's invitation will contain {detail2} explanation of the screening.
+- combination_possibility: With Program 1, you {combine1} be able to combine this screening with other relevant health visits. With Program 2, you {combine2} be able to combine this screening with other health visits.
+- travel_time: With Program 1, it will take {travel_time1} minutes to get to the clinic. With Program 2, it will take {travel_time2} minutes to get to the clinic.
+- waiting_time: In Program 1's clinic, you will have to wait in line for {wait_time1} minutes. In Program 2's clinic, you will have to wait in line for {wait_time2} minutes.
+- doctor: Program 1's doctor is someone {doctor1}. Program 2's doctor is someone {doctor2}.
+- screening_modality: Program 1's doctor will examine your breast by {examine1}. Program 2's doctor will examine your breast by {examine2}.
+- test_sensitivity: Program 1's screening will accurately detect cancer in {accuracy1} out of 100 women. Program 2's screening will accurately detect cancer in {accuracy2} out of 100 women.
+- cost: Program 1 will cost you {cost1}. Program 2 will cost you {cost2}.
+
+Based on these factors, which program would you prefer? Response with 1 if you prefer Program 1, 2 if you prefer Program 2, or 3 if you would opt-out of testing entirely.
+
+Please also rank the top 3 factors in your decision in order of importance from the following:
+invitation_modality, immediate_appt_arrangement_possibility, explanation, combination_possibility, travel_time, waiting_time, doctor, screening_modality, test_sensitivity, and cost.
+
+Output your result in JSON format, and do not output other information.
+{{
+  "program_choice": <program>
+  "top_factors": [
+    "<factor_1>",
+    "<factor_2>",
+    "<factor_3>",
+  ]
+}}""",
+    23: """Suppose you are a man who, yesterday, had condomless anal sex with someone whose HIV status you're unsure of. Consider the foilowing factors of two different HIV testing plans: Test 1 and Test 2:
+
+- wait_time: You will have to wait {selfWindow} weeks before you can take Test 1. You will have to wait 4 weeks before you can take Test 2.
+- test_location: Test 1 will be located somewhere conventient such as your home. Test 2 will be located at {HCPLoc}.
+- sampling_method: Test 1 will be taken using {selfSample}. Test 2 will be taken using {HCPSample}.
+- obtain_method: You will obtain the Test 1 by {selfObtain}. 2: You will obtain Test 2 by {HCPObtain}.
+- test_results_delay: {selfWait}. 2: {HCPWait}.
+- test_results_advice: {selfResults}. 2: {HCPResults}.
+- accuracy: Test 1 is {selfAccuracy}% accurate. Test 2 {HCPAccuracy}% accurate.
+- combination_possibility: With Test 1, you will {selfInfect}be able to test for other STI at the same time. With Test 2, you will {HCPInfect}be able to test for other STI at the same time.
+- cost: Test 1 will {selfCost}. Test 2 will be free.
+
+Based on these factors, which test would you prefer? Respond with 1 if you would prefer Test 1, 2 if you would prefer Test 2, or 3 if you would opt out of testing entirely.
+
+Please also rank the top 3 factors in your decision in order of importance from the following:
+wait_time, test_location, sampling_method, obtain_method, test_results_delay, test_results_advice, accuracy, combination_possibility, and cost.
+
+Output your result in JSON format, and do not output other information.
+{{
+  "test_choice": <test>
+  "top_factors": [
+    "<factor_1>",
+    "<factor_2>",
+    "<factor_3>",
+  ]
+}}"""
  }
