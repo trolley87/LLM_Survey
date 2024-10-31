@@ -13,15 +13,16 @@ df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
 
 prompt_template = """You are a student deciding how to travel to school. Consider the following factors:
 
-- Distance to your school is {distance}
-- Your school is located {school_location} of the river Elbe
-- The nearest city bike station is {cb_location} of the river Elbe
-- Your school and nearest city bike station are on {same_shore}
-- You are in grade {grade}
-- You are {age} years old and {gender}
-- {car_availability} is available for your use
-- It's currently {season}
-- Physical effort needed to bike to school is {effort} KJ
+- distance: {distance} km to school
+- school_location: School is on {school_location} of river Elbe
+- same_shore: School and city bike station are on {same_shore}
+- cb_location: Nearest city bike station is {cb_location} away from river Elbe
+- grade: You are in grade {grade}
+- age: You are {age} years old 
+- gender: You are a {gender} student
+- car_availability: {car_availability} is available for your use
+- season: It's currently {season}
+- effort: Physical effort needed to bike to school is {effort} KJ
 
 Based on these factors, which mode of transportation would you choose to maximize your personal utility?
 Respond with:
@@ -31,8 +32,17 @@ Respond with:
 4 for car
 
 Please also rank the top 3 factors in your decision with the order of importance from the following:
-distance, school_location, grade, age, gender, car_availability, season, cb_location, same_shore, and effort.
-The output format is a list of string similar to: ['distance', 'school_location' ,'grade']
+distance, school_location, same_shore, cb_location, grade, age, gender, car_availability, season, and effort.
+
+Output your result in JSON format, and do not output other information. 
+{{
+    "transportation_choice": <mode>,
+    "top_factors": [
+        "<factor_1>",
+        "<factor_2>",
+        "<factor_3>"
+    ]
+}}
 """
 # Map values to natural language for better understanding by LLMs
 choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"} #paper page#9 Based on Train (2009), we assume that student n chooses the alternative i = {walk, bike, transit, car} & p#13
@@ -72,8 +82,7 @@ def create_json_prompt(row):
     json_prompt = {
         "input": formatted_prompt,
         "output": {
-            "choice": choice_str,
-            "factor_importance": ['', '', '']
+            "original_transportation_choice": choice_str
         }
     }
     return json_prompt
@@ -93,7 +102,7 @@ json_output = json.dumps(json_prompts, indent=2)
 print(json_output)
 
 #save the JSON output to a file
-with open('transportation_choice_prompts_v2.json', 'w') as f:
+with open('transportation_choice_prompts_v3.json', 'w') as f:
     f.write(json_output)
 
 
