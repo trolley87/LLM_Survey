@@ -64,6 +64,7 @@ def create_json_prompt(row):
     school_location_str = school_location_map[row['School_location']]
     cb_location_str = cb_location_map[row['CB_location']]
     same_shore_str = same_shore_map[row['same_shore']]
+    ID_num = int(row['ID'])
 
     formatted_prompt = prompt_template.format(
         distance=f"{distance_str} KM",
@@ -82,6 +83,7 @@ def create_json_prompt(row):
     json_prompt = {
         "input": formatted_prompt,
         "output": {
+            "id": ID_num,
             "original_transportation_choice": choice_str
         }
     }
