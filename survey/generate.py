@@ -2,60 +2,293 @@ from prompt import *
 from googletrans import Translator
 import pandas as pd
 import json
+import pyreadstat
+
 
 def convert5():
-    # Insert the code that generates the prompts based on paper #5 survey data
-    pass
 
-#def convert41():
-  #  pass
-#focus on secondary schools, particularly colleges (German = ‘‘Gymnasium”). College students are aged between 10 and 19 years
-#page #9
-#travel-to-school mode choice,
-#analyze the influence of the variables distance, car availability, season or weather, respectively, on commuting mode choice.
-#Age is considered as an explanatory variable as well, admittedly it turned out to be not significant for public transport.
-#German regions
-#adverse effects of school closures on transport mode choice the patterns of school choice specified first.
-#most influencing factors are distance, car availability and weather.
-#Fair weather= summer term and bad weather = winter term, (see Fig. 3).
-#We assume a transport mode specific average speed for walking of 4 km/h and for cycling of 12 km/h (Federal EnvironmentAgency Germany, 2007).
-#traffic lights, congestion average speed of 30 km/h 
-#In this study we will focus on distance, the school profile and the authority responsible to determine the school location choice,
-# choose a school with a different profile.
-# we assume that profile and the authority responsible are two factors which influence the choice of a certain school.
-#influence of the variables distance, car availability, season or weather, respectively, on commuting mode choice. Age is considered as an explanatory variable as well, 
-#  Distance is a continuous variable measured in kilometers. Car availability (alltime/not all time) and weather (fair/bad) are dummy variables.
-# Car availability means, whether the student has the possibility of travelling to school by car. Car availability equals 1, if the student has the possibility of commuting to school by car every day.
-# there is a table 4 for coefficients in page #9 for waliking, Cycling, Public transport, Car/motorcycle
-#page 10 results
-#choice (a;1: walking, b;2: cycling, c;3: public transport, d;4: car/ motorcycle). fig 9
-#def convert9 ():
-    #We find that the majority of beer consumers are willing to pay more for sustainable beer.
-    #This analysis studies whether consumers are willing to pay more for sustainable beer and what predicts consumers’ willingness-to-pay (WTP).
-    #what attributes define a sustainable consumer?
-    # what is dependent variable? Recycle_Yes?
-    #The dependent variable is the amount per ounce that a respondent would be willing to pay above the typical price of his/her favorite beer.
-    #Regression results with dependent variable WTP for sustainable beer (in $/oz). is $/oz is more sustainable
-    #We include several categories of independent variables,
-    #For each additional $1.00 that one pays per ounce of beer, an individual is willing to pay a premium of 7.4 cents per ounce for the sustainable version.
-    #Personal demographics only account for about 9% of the R-squared decomposition and, as
-#a variable grouping are statistically insignificant. Those who are younger and those with lower levels of education are willing to pay more for sustainable beer. Contrary to other studies’ findings about the importance of children or location of residence, we find no evidence that these conditions matter.
-   # a col "choice" which is dependent variable WTP for sustainable beer (in $/oz).
-   #of personal demographics: age, gender, education, political leaning, marriage status, household residency, and whether the respondent lives in a rural, urban, or suburban setting.
-#To determine which factors are related to greater WTP for sustainable beer, we estimate an ordinary least squared regression with robust standard errors. 
-  #  pass
+# CB? city bike station? or student's home?
+#academic performance (Leistung) is {leistung}?
+#self-reported security behaviour
+    data = pd.read_csv('datasets/5/5.txt', sep='\t')
+    data.to_csv('datasets/5/5.csv', index=False, header=True)
+    df = pd.read_csv('datasets/5/5.csv')
+    df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
+    choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"} #paper page#9 Based on Train (2009), we assume that student n chooses the alternative i = {walk, bike, transit, car} & p#13
+    gender_map = {0: "male", 1: "female"}#paper page#9 table 2; = 1, if female otherwise 0
+    season_map = {1: "winter", 0: "summer"}#paper page#9 table 2; = 1, if winter season; otherwise 0
+    car_avail_map = {0: "No car", 1: "A car"}#paper table 2; = 1, if car is always available
+    school_location_map = {0: "non Same Shore", 1: "Same Shore"}  # paper table 3; Same Shore # page 9: different sides (shores) of the river Elbe
+    #page #9: We consider the dummy variable same shore that takes value 1, if student and school are located on the same side of the river. Table 2 displays the descriptive statistics of the variables used in the students’ utility function.
+    cb_location_map = {0: "not close", 1: "close"}  # Assuming 0 is not close and 1 is close
+    same_shore_map = {0: "different shores", 1: "same shore"}
 
-def convert26():
+    def create_json_prompt(row):
+        gender_str = gender_map[row['Gender']]
+        distance_str = round(row['Distance'], 2)
+        car_avail_str = car_avail_map[row['CarAvail']]
+        season_str = season_map[row['Season']]
+        choice_str = choice_map[row['Choice']]
+        school_location_str = school_location_map[row['School_location']]
+        cb_location_str = cb_location_map[row['CB_location']]
+        same_shore_str = same_shore_map[row['same_shore']]
+        ID_num = int(row['ID'])
+
+        formatted_prompt = prompt_templates[5].format(
+        distance=f"{distance_str} KM",
+        school_location= school_location_str,
+        grade= row['Grade'], #paper page#9 grades are numbered: 5th, 6th, ..., 12th
+        age= row['Age'], #paper page#9 aged between 10 and 19 years
+        gender= gender_str,
+        car_availability= car_avail_str,
+        season= season_str,
+        cb_location= cb_location_str,
+        same_shore= same_shore_str,
+        effort= row['Leistung']
+    )
+    
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "id": ID_num,
+                "original_transportation_choice": choice_str
+        }
+    }
+        return json_prompt
+
+    json_prompts = []
+
+    for _, row in df.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    print(json_output)
+
+    with open('output/5.json', 'w') as f:
+        f.write(json_output)
     pass
+def convert9():
+    data = pd.read_csv('datasets/9. Beer Data Full Dataset.csv')
+    print(data.columns.tolist())  # Print column names for verification
+    choice_map = {
+        1: "Willing to pay for sustainable beer (in $/oz).",
+        0: "Not willing to pay for sustainable beer (in $/oz)."
+    }
+    recycle_map = {0: "Recycle", 1: "Not Recycle"}
+    def create_json_prompt(row):
+        if row['Age_sub21']:
+            age_category = "Age under 21"
+        elif row['Age_21to24']:
+            age_category = "Age 21 to 24"
+        elif row['Age_25to34']:
+            age_category = "Age 25 to 34"
+        elif row['Age_35to44']:
+            age_category = "Age 35 to 44"
+        elif row['Age_45to54']:
+            age_category = "Age 45 to 54"
+        elif row['Age_55to64']:
+            age_category = "Age 55 to 64"
+        elif row['Age_65plus']:
+            age_category = "Age 65 and above"
+        else:
+            age_category = "Unknown age category"
+
+        if row['Educ_NoHSdip'] == 1:
+            education_descriptions = "Less than high school"
+        elif row['Educ_HSdip'] == 1:
+            education_descriptions = "High School"
+        elif row['Educ_College_NoDegree'] == 1:
+            education_descriptions = "Some College Education (No Degree)"
+        elif row['Educ_AAorBA'] == 1:
+            education_descriptions = "Associate's or Bachelor's Degree"
+        elif row['Educ_GradDegree'] == 1:
+            education_descriptions = "Graduate Degree"
+        else:
+            "No educational attainment specified"
+
+        if row['Income_0to24999'] == 1:
+            income_descriptions = "Income $0 to $24,999"
+        elif row['Income_25to49999'] == 1:
+            income_descriptions = "Income $25,000 to $49,999" 
+        elif row['Income_50to74999'] == 1:
+            income_descriptions = "Income $50,000 to $74,999"
+        elif row['Income_75to99999'] == 1:
+            income_descriptions = "Income $75,000 to $99,999" 
+        elif row['Income_100plus'] == 1:
+            income_descriptions = "Income $100,000 and above"
+        else:
+            "No income category specified"
+
+        if row['BuyBeer_Never'] == 1:
+            buying_descriptions = "Never buys beer"
+        elif row['BuyBeer_sub1permonth'] == 1:
+            buying_descriptions = "Buys beer less than once per month"
+        elif row['BuyBeer_1permonth'] == 1:
+            buying_descriptions = "Buys beer once per month"
+        elif row['BuyBeer_2or3permonth'] == 1:
+            buying_descriptions = "Buys beer 2 to 3 times per month" 
+        elif row['BuyBeer_Weekly'] == 1:
+            buying_descriptions = "Buys beer weekly" 
+        elif row['BuyBeer_PlusWeekly'] == 1:
+            buying_descriptions = "Buys beer more than once a week"
+        else:
+            "No buying frequency specified"
+        environmental_contribution = ""
+        # Extract environmental contribution
+        if row['EnvContribution_Yes'] == 1:
+            environmental_contribution = "Contributes to environmental causes"
+        elif row['EnvContribution_IDK'] == 1:
+            environmental_contribution = "Unsure about environmental contribution"
+        elif row['EnvContribution_PrefNoAnswer'] == 1:
+            environmental_contribution = "Prefers not to answer about environmental contribution"
+        else:
+            "No environmental contribution information specified"
+
+        recycle_status = recycle_map.get(row['Recycle_Yes'], "Unknown")  # Default to "Unknown" if not found
+
+        choice_str = choice_map.get(row['Choice'], "Unknown choice")
+
+        formatted_prompt = prompt_templates[9].format(
+            age_category = age_category,
+            education_summary = education_descriptions,
+            income_summary = income_descriptions,
+            buying_descriptions = buying_descriptions,
+            environmental_contribution_descriptions = environmental_contribution,
+            Recycle_Yes = recycle_status
+    )
+
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "choice_WTP": choice_str
+            }
+        }
+        return json_prompt
+
+    json_prompts = []
+    limit = 2000
+    for _, row in data.head(limit).iterrows(): 
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    with open('output/9.json', 'w') as f:
+        f.write(json_output)
 
 def convert14():
     pass
 
-def convert15():
+def convert16():
+    #page #5
+    #The overall aim of the current study is to assess the effectiveness of three different labelling schemes (Graded, “Seal of approval” and informational)
+    #Alternatives “utility function”
+    #A more effective alternative: use a behavioural measure.explore whether those who engage in more protective cybersecurity behaviours are influenced more by a labelling scheme than those who do not. 
+    #. Consequently, we seek to explore whether those who engage in greater cybersecurity behaviours are influenced more by an IoT security label.
+    #assess the effectiveness of 3 different labelling schemes: (Graded, “Seal of approval” and informational) in nudging cxonsumers towards “secure” products and away from products that offer no assurances around securit
+    data = pd.read_stata("datasets/16 IoT_DCE_Thermostats-PlosOne.dta")
+    pd.set_option('display.max_columns', None) 
+    print(data)
+    grouped = data.groupby('choicetask').size().reset_index(name='count')
+    print(grouped)
+   
+    #what are subject, item, alternative, choicetask
+    security_label_map = {0: "Does not have a security label", 1: "Has a security label"} 
+    functionality_map ={0: "Functoinality level of standard", 1: "Functoinality level of premium"}
+    education_map = {
+    1: "No formal qualifications",
+    2: "Secondary Education (GCSE/O-Levels)",
+    3: "Post-Secondary Education (College, A-Levels, NVQ3 or below, or similar)",
+    4: "Vocational Qualification (Diploma, Certificate, BTEC, NVQ 4 and above, or similar)",
+    5: "Undergraduate Degree (BA, BSc etc.)",
+    6: "Post-graduate Degree (MA, MSc etc.)",
+    7: "Doctorate (PhD, MD)"
+}
+    choice_map = {0: "not willing to pay for the IoT device", 1: "willing to pay for the IoT device"}
+    alternative_map = {1: "informational", 2: "binary", 3: "graded"}
+   
+    def create_json_prompt(row):
+        security_label_str = security_label_map[row['label']],
+        functionality_str = functionality_map[row['function']],
+        device_name_map = {
+        'Camera': "security camera",
+        'Smart_TV': "Smart TV",
+        'Thermostat': "smart thermostat",
+        'Wearable': "wearable"
+    }.get(row['stproducttested'], "unknown device")
+        alternative_str = alternative_map.get(row['alternative'], "unknown alternative"), 
+
+        gender_map = "female" if row['Female'] == 1 else "male" if row['Male'] == 1 else "unknown",
+        education_str = education_map[row['education']],
+        choice_str = choice_map[row['choice']],
+        ID_num = int(row['choicetask'])
+        formatted_prompt = prompt_templates[16].format(
+            device_name = device_name_map,
+            security_label = security_label_str, 
+            label_condition = row["condition"],
+            functionality = functionality_str,
+            #covert price to 5 categories based on page #6
+            price = round(row['price'], 2),
+            alternative=alternative_str,
+            subject = row['subject'], 
+            item = row['item'],
+
+
+            age= row['age'], 
+            gender= gender_map,
+            education = education_str,
+            
+        )
+    
+        json_prompt = {
+            "input": formatted_prompt,
+             "output": {
+                "purchase_choice": choice_str,
+                 "id": ID_num
+        }
+    }
+        return json_prompt 
+    json_prompts = []
+
+    for _, row in data.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    json_output = json.dumps(json_prompts, indent=2)
+
+    #print(json_output)
+
+    with open('output/16.json', 'w') as f:
+        f.write(json_output)
     pass
 
 def convert21():
     pass
+
+def convert26():
+    #probability of choice for pangasius or tilapia
+    #sustainability 
+    # country of origin
+    #eco-labeling
+    #pangasius -> Pangasianodon hypophthalmus.  tilapia species -> niloticus
+    #positive willingness-to-pay (WTP) for eco-labeled fish products.
+    #price
+    #negative/positive relationship; between the price attribute and the probability of choice for pangasius and tilapia.
+    #brand attribute
+    #H1 to H6: hypotheses on main effects, H7 to H11: hypotheses on interaction effects
+    file_path = "datasets/26/data_project_262320_2016_02_22.sav"
+    df, meta = pyreadstat.read_sav(file_path)
+    print(df.head())
+    df.to_csv("datasets/26/26sav.csv", index=False)
+    file_path_dta = "datasets/26/Stata_Final_Data_EffectCoding_Hinkes.dta"
+    df_dta, meta_dta = pyreadstat.read_dta(file_path_dta)
+    print(df_dta.head())
+    df_dta.to_csv("datasets/26/26dta.csv", index=False)
+    pass
+
+
 
 def convert29():
     df = pd.read_stata("datasets/29.dta")
@@ -409,7 +642,7 @@ def convert22():
         df.to_csv(outfile, index = False)
 
 def convert23():
-    '''dataset explanation
+    '''dataset explanation (based on Table 1 from paper)
     22320 rows
     Participants were presented with a series of HIV testing plan questions
     For each question, there were two plans for them to choose from, or they could opt out of testing entirely
@@ -417,36 +650,152 @@ def convert23():
     Plan B is done at a public location
     attributes:
         eS, eH, dS, dH
+        S = self (remote test), left column of Table 1
+        H = HCP (health care provider), right column of Table 1
     '''
     df = pd.read_csv("datasets/23.csv")
+    df["Prompt"] = "" # add new Prompt column, defaults to empty string
+    with open("output/23.csv", "w", newline = '') as outfile:
+        for i in range(0, len(df.index), 3):
+            row1 = df.iloc[i]       # self
+            row2 = df.iloc[i+1]     # HCP
+
+            if row1["dSWindow12"] == 1:
+                selfWindow_data = "12 weeks"
+            else:
+                selfWindow_data = "4 weeks"
+
+            if row2["dHLocGP"] == 1:
+                HCPLoc_data = "a general practice"
+            elif row2["dHLocMobile"] == 1:
+                HCPLoc_data = "a mobile clinic based at a bar, club, or sauna"
+            elif row2["dHLocComty"] == 1:
+                HCPLoc_data = "a community location such as an HIV charity"
+            else:
+                HCPLoc_data = "a sexual health clinic"
+
+            if row1["dSHowOral"] == 1:
+                selfSample_data = "an oral swab"
+            else:
+                selfSample_data = "a blood drop via a skin prick"
+            if row2["dHBloodDrop"] == 1:
+                HCPSample_data = "a blood drop via a skin prick"
+            else:
+                HCPSample_data = "a blood sample via a syringe"
+            
+            if row1["dSGetOnline"] == 1:
+                selfObtain_data = "ordering online and receiving the test in the mail"
+            else:
+                selfObtain_data = "\"clicking and collecting\" from a pharamacy or health clinic"
+            if row2["dHGetBook"] == 1:
+                HCPObtain_data = "booking and obtaining an appointment"
+            else:
+                HCPObtain_data = "dropping in and waiting"
+
+            if row1["dSWait3days"] == 1:
+                selfWait_data = "After taking the test, you will mail it and receive a call with your results in 3 days from a health care professional"
+                selfResults_data = "Advice about your results will be available online and from the person who calls you"
+            elif row1["dSWait7days"] == 1:
+                selfWait_data = "After taking the test, you will mail it and receive a call with your results in 7 days from a health care professional"
+                selfResults_data = "Advice about your results will be available online and from the person who calls you"
+            elif row1["dSWait30mins"] == 1:
+                selfWait_data = "After taking the test, you will get your results in 30 minutes"
+                selfResults_data = "Advice about your results will be available online and from a health care professional accessible via a free phone number"
+            else:
+                selfWait_data = "After taking the test, you will get your results in 10 minutes"
+                selfResults_data = "Advice about your results will be available online and from a health care professional accessible via a free phone number"
+
+            if row2["dHWait3days"] == 1:
+                HCPWait_data = "After taking the test, you will receive a call with your results in 3 days from a health care professional"
+                HCPResults_data = "The person who calls you can give you advice about your results, and advice will be available online"
+            elif row2["dHWaitSame"] == 1:
+                HCPWait_data = "The same day you take the test, you will receive a call with your results from a health care professional"
+                HCPResults_data = "The person who calls you can give you advice about your results, and advice will be available online."
+            elif row2["dHWait30mins"] == 1:
+                HCPWait_data = "After taking the test, you will result your results then and there in 30 minutes"
+                HCPResults_data = "You will be able to receive advice from the person who gives you your result, and advice will be available online"
+            else:
+                HCPWait_data = "After taking the test, you will result your results then and there in 10 minutes"
+                HCPResults_data = "You will be able to receive advice from the person who gives you your result, and advice will be available online"
+
+            if row1["dSAccuracy99"] == 1:
+                selfAccuracy_data = "99"
+            else:
+                selfAccuracy_data = "95"
+            if row2["dHAccuracy99"] == 1:
+                HCPAccuracy_data = "99"
+            else:
+                HCPAccuracy_data = "95"
+
+            if row1["dSInfect"] == 1:
+                selfInfect_data = ""
+            else:
+                selfInfect_data = "not "
+            if row2["dHInfect"] == 1:
+                HCPInfect_data = ""
+            else:
+                HCPInfect_data = "not "
+
+            if row1["dSCostfree"] == 1:
+                selfCost_data = "be free"
+            elif row1["dSCost10"] == 1:
+                selfCost_data = "cost 10 pounds"
+            elif row1["dSCost20"] == 1:
+                selfCost_data = "cost 20 pounds"
+            else:
+                selfCost_data = "cost 30 pounds"
+
+            prompt = prompt_templates[23].format(selfWindow=selfWindow_data,
+                                                 HCPLoc=HCPLoc_data,
+                                                 selfSample=selfSample_data,HCPSample=HCPSample_data,
+                                                 selfObtain=selfObtain_data,HCPObtain=HCPObtain_data,
+                                                 selfWait=selfWait_data, HCPWait=HCPWait_data,
+                                                 selfResults=selfResults_data, HCPResults=HCPResults_data,
+                                                 selfAccuracy=selfAccuracy_data, HCPAccuracy=HCPAccuracy_data,
+                                                 selfInfect=selfInfect_data, HCPInfect=HCPInfect_data,
+                                                 selfCost=selfCost_data)
+
+            df.at[i+2,"Prompt"] = prompt
+        df.to_csv(outfile, index = False)
+
 
 
 def convert41():
+    # Some column names in the table do not appear in paper #41.  Grade, Gender, CB_location
     data = pd.read_csv('datasets/41.csv', delimiter='\t')  # Specify tab as the delimiter
     data.columns = data.columns.str.strip()  # Remove leading/trailing spaces
     print(data.columns) 
+    grouped = data.groupby('School_location').size().reset_index(name='count')
+    print(grouped)
     choice_map = {1: "walking", 2: "cycling", 3: "public transport", 4: "car/ motorcycle"} 
     car_avail_map = {0: "available all time", 1: "available not all time"} # Car availability equals one, if the student has the possibility of commuting to school by car every day.
     season_map = {1: "Summer season/fair weather", 0: "Winter season/bad weather"}
-
+    school_location_map = {0: "School is not close to home", 1: "School is close to home"}
     def create_json_prompt(row):
+        ID_num = int(row['ID'])
         distance_str = round(row['Distance'], 2)
         car_avail_str = car_avail_map[row['CarAvail']]
         season_str = season_map[row['Season']]
+        school_location_str = school_location_map[row['School_location']]
+
         choice_str = choice_map[row['Choice']]
    
         formatted_prompt = prompt_templates[41].format(
             distance=f"{distance_str} KM",
             age= row['Age'], #paper page#9 aged between 10 and 19 years
             car_availability= car_avail_str,
-            season= season_str
+            season= season_str,
+            school_location= school_location_str,
+            effort= row['Leistung']
         )
     
     # Structure the prompt and result as a dictionary (JSON-like structure)
         json_prompt = {
             "input": formatted_prompt,
              "output": {
+                "id": ID_num,
                 "choice": choice_str
+                
         }
     }
         return json_prompt 
@@ -458,134 +807,27 @@ def convert41():
 
     json_output = json.dumps(json_prompts, indent=2)
 
-    print(json_output)
-
     with open('output/41.json', 'w') as f:
         f.write(json_output)
 
     pass
 
-def convert9():
-    data = pd.read_csv('datasets/9. Beer Data Full Dataset.csv')
-    print(data.columns.tolist())  # Print column names for verification
-    choice_map = {
-        1: "Willing to pay for sustainable beer (in $/oz).",
-        0: "Not willing to pay for sustainable beer (in $/oz)."
-    }
-    def create_json_prompt(row):
-        if row['Age_sub21']:
-            age_category = "Age under 21"
-        elif row['Age_21to24']:
-            age_category = "Age 21 to 24"
-        elif row['Age_25to34']:
-            age_category = "Age 25 to 34"
-        elif row['Age_35to44']:
-            age_category = "Age 35 to 44"
-        elif row['Age_45to54']:
-            age_category = "Age 45 to 54"
-        elif row['Age_55to64']:
-            age_category = "Age 55 to 64"
-        elif row['Age_65plus']:
-            age_category = "Age 65 and above"
-        else:
-            age_category = "Unknown age category"
 
-        if row['Educ_NoHSdip'] == 1:
-            education_descriptions = "Less than high school"
-        elif row['Educ_HSdip'] == 1:
-            education_descriptions = "High School"
-        elif row['Educ_College_NoDegree'] == 1:
-            education_descriptions = "Some College Education (No Degree)"
-        elif row['Educ_AAorBA'] == 1:
-            education_descriptions = "Associate's or Bachelor's Degree"
-        elif row['Educ_GradDegree'] == 1:
-            education_descriptions = "Graduate Degree"
-        else:
-            "No educational attainment specified"
-
-        if row['Income_0to24999'] == 1:
-            income_descriptions = "Income $0 to $24,999"
-        elif row['Income_25to49999'] == 1:
-            income_descriptions = "Income $25,000 to $49,999" 
-        elif row['Income_50to74999'] == 1:
-            income_descriptions = "Income $50,000 to $74,999"
-        elif row['Income_75to99999'] == 1:
-            income_descriptions = "Income $75,000 to $99,999" 
-        elif row['Income_100plus'] == 1:
-            income_descriptions = "Income $100,000 and above"
-        else:
-            "No income category specified"
-
-        if row['BuyBeer_Never'] == 1:
-            buying_descriptions = "Never buys beer"
-        elif row['BuyBeer_sub1permonth'] == 1:
-            buying_descriptions = "Buys beer less than once per month"
-        elif row['BuyBeer_1permonth'] == 1:
-            buying_descriptions = "Buys beer once per month"
-        elif row['BuyBeer_2or3permonth'] == 1:
-            buying_descriptions = "Buys beer 2 to 3 times per month" 
-        elif row['BuyBeer_Weekly'] == 1:
-            buying_descriptions = "Buys beer weekly" 
-        elif row['BuyBeer_PlusWeekly'] == 1:
-            buying_descriptions = "Buys beer more than once a week"
-        else:
-            "No buying frequency specified"
-        environmental_contribution = ""
-        # Extract environmental contribution
-        if row['EnvContribution_Yes'] == 1:
-            environmental_contribution = "Contributes to environmental causes"
-        elif row['EnvContribution_IDK'] == 1:
-            environmental_contribution = "Unsure about environmental contribution"
-        elif row['EnvContribution_PrefNoAnswer'] == 1:
-            environmental_contribution = "Prefers not to answer about environmental contribution"
-        else:
-            "No environmental contribution information specified"
-
-        choice_str = choice_map.get(row['Choice'], "Unknown choice")
-
-        formatted_prompt = prompt_templates[9].format(
-            age_category = age_category,
-            education_summary = education_descriptions,
-            income_summary = income_descriptions,
-            buying_descriptions = buying_descriptions,
-            environmental_contribution_descriptions = environmental_contribution
-    )
-
-        json_prompt = {
-            "input": formatted_prompt,
-            "output": {
-                "choice_WTP": choice_str
-            }
-        }
-        return json_prompt
-
-    json_prompts = []
-    limit = 100
-    for _, row in data.head(limit).iterrows(): 
-        json_prompt = create_json_prompt(row)
-        json_prompts.append(json_prompt)
-
-    json_output = json.dumps(json_prompts, indent=2)
-
-    print(json_output)
-
-    with open('output/9.json', 'w') as f:
-        f.write(json_output)
 
 def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     #convert5()
-    #convert41()
+    convert41()
     #convert9()
     #convert26()
     #convert14()
-    #convert15()
+    #convert16()
     #convert21()
     #convert29()
     #convert38()
-    convert39()
+    #convert39()
     #convert24()
-    #convert27()
+   # convert27()
     #convert22()
     #convert23()
 
