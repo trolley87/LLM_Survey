@@ -641,123 +641,6 @@ def convert22():
             df.at[i+2,"Prompt"] = prompt
         df.to_csv(outfile, index = False)
 
-def convert23():
-    '''dataset explanation (based on Table 1 from paper)
-    22320 rows
-    Participants were presented with a series of HIV testing plan questions
-    For each question, there were two plans for them to choose from, or they could opt out of testing entirely
-    Plan A is always a remote test, done from the participant's home
-    Plan B is done at a public location
-    attributes:
-        eS, eH, dS, dH
-        S = self (remote test), left column of Table 1
-        H = HCP (health care provider), right column of Table 1
-    '''
-    df = pd.read_csv("datasets/23.csv")
-    df["Prompt"] = "" # add new Prompt column, defaults to empty string
-    with open("output/23.csv", "w", newline = '') as outfile:
-        for i in range(0, len(df.index), 3):
-            row1 = df.iloc[i]       # self
-            row2 = df.iloc[i+1]     # HCP
-
-            if row1["dSWindow12"] == 1:
-                selfWindow_data = "12 weeks"
-            else:
-                selfWindow_data = "4 weeks"
-
-            if row2["dHLocGP"] == 1:
-                HCPLoc_data = "a general practice"
-            elif row2["dHLocMobile"] == 1:
-                HCPLoc_data = "a mobile clinic based at a bar, club, or sauna"
-            elif row2["dHLocComty"] == 1:
-                HCPLoc_data = "a community location such as an HIV charity"
-            else:
-                HCPLoc_data = "a sexual health clinic"
-
-            if row1["dSHowOral"] == 1:
-                selfSample_data = "an oral swab"
-            else:
-                selfSample_data = "a blood drop via a skin prick"
-            if row2["dHBloodDrop"] == 1:
-                HCPSample_data = "a blood drop via a skin prick"
-            else:
-                HCPSample_data = "a blood sample via a syringe"
-            
-            if row1["dSGetOnline"] == 1:
-                selfObtain_data = "ordering online and receiving the test in the mail"
-            else:
-                selfObtain_data = "\"clicking and collecting\" from a pharamacy or health clinic"
-            if row2["dHGetBook"] == 1:
-                HCPObtain_data = "booking and obtaining an appointment"
-            else:
-                HCPObtain_data = "dropping in and waiting"
-
-            if row1["dSWait3days"] == 1:
-                selfWait_data = "After taking the test, you will mail it and receive a call with your results in 3 days from a health care professional"
-                selfResults_data = "Advice about your results will be available online and from the person who calls you"
-            elif row1["dSWait7days"] == 1:
-                selfWait_data = "After taking the test, you will mail it and receive a call with your results in 7 days from a health care professional"
-                selfResults_data = "Advice about your results will be available online and from the person who calls you"
-            elif row1["dSWait30mins"] == 1:
-                selfWait_data = "After taking the test, you will get your results in 30 minutes"
-                selfResults_data = "Advice about your results will be available online and from a health care professional accessible via a free phone number"
-            else:
-                selfWait_data = "After taking the test, you will get your results in 10 minutes"
-                selfResults_data = "Advice about your results will be available online and from a health care professional accessible via a free phone number"
-
-            if row2["dHWait3days"] == 1:
-                HCPWait_data = "After taking the test, you will receive a call with your results in 3 days from a health care professional"
-                HCPResults_data = "The person who calls you can give you advice about your results, and advice will be available online"
-            elif row2["dHWaitSame"] == 1:
-                HCPWait_data = "The same day you take the test, you will receive a call with your results from a health care professional"
-                HCPResults_data = "The person who calls you can give you advice about your results, and advice will be available online."
-            elif row2["dHWait30mins"] == 1:
-                HCPWait_data = "After taking the test, you will result your results then and there in 30 minutes"
-                HCPResults_data = "You will be able to receive advice from the person who gives you your result, and advice will be available online"
-            else:
-                HCPWait_data = "After taking the test, you will result your results then and there in 10 minutes"
-                HCPResults_data = "You will be able to receive advice from the person who gives you your result, and advice will be available online"
-
-            if row1["dSAccuracy99"] == 1:
-                selfAccuracy_data = "99"
-            else:
-                selfAccuracy_data = "95"
-            if row2["dHAccuracy99"] == 1:
-                HCPAccuracy_data = "99"
-            else:
-                HCPAccuracy_data = "95"
-
-            if row1["dSInfect"] == 1:
-                selfInfect_data = ""
-            else:
-                selfInfect_data = "not "
-            if row2["dHInfect"] == 1:
-                HCPInfect_data = ""
-            else:
-                HCPInfect_data = "not "
-
-            if row1["dSCostfree"] == 1:
-                selfCost_data = "be free"
-            elif row1["dSCost10"] == 1:
-                selfCost_data = "cost 10 pounds"
-            elif row1["dSCost20"] == 1:
-                selfCost_data = "cost 20 pounds"
-            else:
-                selfCost_data = "cost 30 pounds"
-
-            prompt = prompt_templates[23].format(selfWindow=selfWindow_data,
-                                                 HCPLoc=HCPLoc_data,
-                                                 selfSample=selfSample_data,HCPSample=HCPSample_data,
-                                                 selfObtain=selfObtain_data,HCPObtain=HCPObtain_data,
-                                                 selfWait=selfWait_data, HCPWait=HCPWait_data,
-                                                 selfResults=selfResults_data, HCPResults=HCPResults_data,
-                                                 selfAccuracy=selfAccuracy_data, HCPAccuracy=HCPAccuracy_data,
-                                                 selfInfect=selfInfect_data, HCPInfect=HCPInfect_data,
-                                                 selfCost=selfCost_data)
-
-            df.at[i+2,"Prompt"] = prompt
-        df.to_csv(outfile, index = False)
-
 
 
 def convert41():
@@ -826,10 +709,11 @@ def main():
     #convert29()
     #convert38()
     #convert39()
+    #convert39()
     #convert24()
    # convert27()
     #convert22()
-    #convert23()
+    convert23()
 
 if __name__ == "__main__":
     main()
