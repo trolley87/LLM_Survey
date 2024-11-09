@@ -25,17 +25,17 @@ Healthtransportation
 
 prompt_templates = {
     5:  """You are a student deciding how to travel to school. Consider the following factors:
-- distance: {distance} KM to school
-- school_location: School is on {school_location} Shore of river Elbe
-- same_shore: School and city bike station are on {same_shore}
-_ cb_location: Nearest city bike station is  {cb_location} away from river Elbe
-- grade: You are in grade {grade}
-- age: You are {age} years old
-- gender: You are a  {gender} student
-- car_availability: {car_availability} is available for your use
-- season: It's currently  {season}
-- effort: Physical effort needed to bike to school is {effort} KJ
 
+- distance: {distance} km to school
+- school_location: School is on {school_location} of river Elbe
+- same_shore: School and city bike station are on {same_shore}
+- cb_location: Nearest city bike station is {cb_location} away from river Elbe
+- grade: You are in grade {grade}
+- age: You are {age} years old 
+- gender: You are a {gender} student
+- car_availability: {car_availability} is available for your use
+- season: It's currently {season}
+- effort: Physical effort needed to bike to school is {effort} KJ
 
 Based on these factors, which mode of transportation would you choose to maximize your personal utility?
 Respond with:
@@ -70,9 +70,9 @@ Output your result in JSON format, and do not output other information.
 #- Consumption habits
 #- Other relevant attributes
 #- Demographic factors (e.g., age, gender, education, political leaning, marital status, household residency, and whether you live in a rural, urban, or suburban setting):
-    9: """Willingness-to-pay (WTP) for sustainable beer is binary, with WTP values of 0 or 1, where a value of 1 indicates willingness to pay for sustainable beer, and a value of 0 indicates a lack of willingness.
+    9: """Suppose you are participating a survey which aims to investigate your willingness to pay for sustainable beer. Willingness-to-pay (WTP) for sustainable beer is binary, with WTP values of 0 or 1, where a value of 1 indicates willingness to pay for sustainable beer, and a value of 0 indicates a lack of willingness.
 
-How does your WTP for sustainable beer vary across different independent variables? Consider the following aspects:
+How does your WTP for sustainable beer vary across different independent variables? Consider the following factors:
 - Age category: {age_category}  
 - Educational attainment: {education_summary}
 - Income: {income_summary}
@@ -97,7 +97,7 @@ Output your result in JSON format, and do not output other information.
 #16: 
 #for price: there were five levels: baseline, 10%, 20%, 30% and 40% more expensive
 # page #5:  3 attributes: 1. labelling, 2.functionality, 3.price. 
-    16:"""You are considering purchasing an IoT device, and the presence of security labels may influence your decision. There are other attributes, including device information and your demographics, that might affect your decision to buy or not buy an IoT device. Please consider the following options:
+    16:"""Suppose you are participating a survey which aims to investigate your willingness to purchase an IoT device, and the presence of security labels may influence your decision. There are other attributes, including device information and your demographics, that might affect your decision to buy or not buy an IoT device. Please consider the following factors:
 Device Information:
 - device_name: The IoT device name is {device_name}
 - security_label: The device {security_label}
@@ -129,8 +129,7 @@ Format your response as follows in JSON, and do not output additional informatio
 }}
  """,
 
-    41: """
-    We are analyzing the influence of various factors on commuting mode choice. Consider the following information:
+    41: """Suppose you are a student deciding how to travel to school. Consider the following factors:
 
 - distance to school: {distance} km.
 - car_availability: {car_availability} (yes or no).
@@ -167,7 +166,7 @@ Output your result in JSON format, and do not output other information.
     15:"", #Missed #15
     21: "", #Data Does not make sense
     29: "", # SKIPPED: DATASET IS IN GERMAN
-    38: """You are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. Consider the following factors:
+    38: """Suppose you are a resident of {user_state}. You are choosing between two different energy plans to provide electricity for your home: Plan 1 and Plan 2. Consider the following factors:
 
 - cost: Plan 1 will cost you ${price1} per month. Plan 2 will cost you ${price2} per month.
 - emissions: Compared to your current energy plan, Plan 1 will result in {gas1}% lower emissions, while Plan 2 will result in {gas2}% lower emissions.

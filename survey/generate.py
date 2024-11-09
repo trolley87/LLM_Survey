@@ -73,8 +73,8 @@ def convert9():
     data = pd.read_csv('datasets/9. Beer Data Full Dataset.csv')
     print(data.columns.tolist())  # Print column names for verification
     choice_map = {
-        1: "Willing to pay for sustainable beer (in $/oz).",
-        0: "Not willing to pay for sustainable beer (in $/oz)."
+        1: "Willing to pay for sustainable beer.",
+        0: "Not willing to pay for sustainable beer."
     }
     recycle_map = {0: "Recycle", 1: "Not Recycle"}
     def create_json_prompt(row):
@@ -149,6 +149,7 @@ def convert9():
         recycle_status = recycle_map.get(row['Recycle_Yes'], "Unknown")  # Default to "Unknown" if not found
 
         choice_str = choice_map.get(row['Choice'], "Unknown choice")
+        id = int(row['ID'])
 
         formatted_prompt = prompt_templates[9].format(
             age_category = age_category,
@@ -162,20 +163,23 @@ def convert9():
         json_prompt = {
             "input": formatted_prompt,
             "output": {
+                "id":id,
                 "choice_WTP": choice_str
             }
         }
         return json_prompt
 
     json_prompts = []
+    data = data.dropna()
     limit = 2000
-    for _, row in data.head(limit).iterrows(): 
+    # Pick a random sample of 2000 rows
+    for _, row in data.sample(n=limit, random_state=42).iterrows():
         json_prompt = create_json_prompt(row)
         json_prompts.append(json_prompt)
 
     json_output = json.dumps(json_prompts, indent=2)
 
-    with open('output/9.json', 'w') as f:
+    with open('output/Survey_09_20241104_resample_2000_v1.json', 'w') as f:
         f.write(json_output)
 
 def convert14():
@@ -190,13 +194,13 @@ def convert16():
     #assess the effectiveness of 3 different labelling schemes: (Graded, “Seal of approval” and informational) in nudging cxonsumers towards “secure” products and away from products that offer no assurances around securit
     data = pd.read_stata("datasets/16 IoT_DCE_Thermostats-PlosOne.dta")
     pd.set_option('display.max_columns', None) 
-    print(data)
+    print(data.head().to_string())
     grouped = data.groupby('choicetask').size().reset_index(name='count')
-    print(grouped)
+    print(grouped.head().to_string())
    
     #what are subject, item, alternative, choicetask
     security_label_map = {0: "Does not have a security label", 1: "Has a security label"} 
-    functionality_map ={0: "Functoinality level of standard", 1: "Functoinality level of premium"}
+    functionality_map ={0: "Functionality level of standard", 1: "Functionality level of premium"}
     education_map = {
     1: "No formal qualifications",
     2: "Secondary Education (GCSE/O-Levels)",
@@ -211,7 +215,7 @@ def convert16():
    
     def create_json_prompt(row):
         security_label_str = security_label_map[row['label']],
-        functionality_str = functionality_map[row['function']],
+        functionality_str = functionality_map[int(row['function'])],
         device_name_map = {
         'Camera': "security camera",
         'Smart_TV': "Smart TV",
@@ -222,23 +226,23 @@ def convert16():
 
         gender_map = "female" if row['Female'] == 1 else "male" if row['Male'] == 1 else "unknown",
         education_str = education_map[row['education']],
-        choice_str = choice_map[row['choice']],
+        choice_str = choice_map.get(row['choice'], "Unknown choice"),
         ID_num = int(row['choicetask'])
         formatted_prompt = prompt_templates[16].format(
             device_name = device_name_map,
-            security_label = security_label_str, 
+            security_label = ''.join(security_label_str),
             label_condition = row["condition"],
-            functionality = functionality_str,
+            functionality = ''.join(functionality_str),
             #covert price to 5 categories based on page #6
             price = round(row['price'], 2),
-            alternative=alternative_str,
+            alternative= ''.join(alternative_str),
             subject = row['subject'], 
             item = row['item'],
 
 
             age= row['age'], 
-            gender= gender_map,
-            education = education_str,
+            gender= ''.join(gender_map),
+            education = ''.join(education_str),
             
         )
     
@@ -252,7 +256,10 @@ def convert16():
         return json_prompt 
     json_prompts = []
 
-    for _, row in data.iterrows():
+    data = data.dropna()
+    limit = 2000
+    # Pick a random sample of 2000 rows
+    for _, row in data.sample(n=limit, random_state=42).iterrows():
         json_prompt = create_json_prompt(row)
         json_prompts.append(json_prompt)
 
@@ -260,7 +267,7 @@ def convert16():
 
     #print(json_output)
 
-    with open('output/16.json', 'w') as f:
+    with open('output/Survey_16_20241104_resample_2000_v1.json', 'w') as f:
         f.write(json_output)
     pass
 
@@ -684,13 +691,16 @@ def convert41():
         return json_prompt 
     json_prompts = []
 
-    for _, row in data.iterrows():
+    data = data.dropna()
+    limit = 2000
+    # Pick a random sample of 2000 rows
+    for _, row in data.sample(n=limit, random_state=42).iterrows():
         json_prompt = create_json_prompt(row)
         json_prompts.append(json_prompt)
 
     json_output = json.dumps(json_prompts, indent=2)
 
-    with open('output/41.json', 'w') as f:
+    with open('output/Survey_41_20241104_resample_2000_v1.json', 'w') as f:
         f.write(json_output)
 
     pass
@@ -701,19 +711,19 @@ def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     #convert5()
     convert41()
-    #convert9()
-    #convert26()
+    # convert9()
+    # convert26()
     #convert14()
-    #convert16()
+    # convert16()
     #convert21()
     #convert29()
-    #convert38()
+    # convert38()
     #convert39()
     #convert39()
     #convert24()
    # convert27()
     #convert22()
-    convert23()
+    # convert23()
 
 if __name__ == "__main__":
     main()
