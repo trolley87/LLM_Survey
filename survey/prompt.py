@@ -187,7 +187,7 @@ Output your result in JSON format, and do not output other information.
   "top_factors": [
     "<factor_1>",
     "<factor_2>",
-    "<factor_3>",
+    "<factor_3>"
   ]
 }}""",
     39: """"Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following factors:
@@ -208,7 +208,7 @@ Output your result in JSON format, and do not output other information.
   "top_factors": [
     "<factor_1>",
     "<factor_2>",
-    "<factor_3>",
+    "<factor_3>"
   ]
 }}""",
     24: "", # SKIPPED: PAPER IS MISSING
@@ -230,7 +230,7 @@ Output your result in JSON format, and do not output other information.
   "top_factors": [
     "<factor_1>",
     "<factor_2>",
-    "<factor_3>",
+    "<factor_3>"
   ]
 }}""",
     22: """Suppose you are a woman choosing between two different breast cancer screening programs: Program 1 and Program 2. Consider the following factors:
@@ -257,7 +257,7 @@ Output your result in JSON format, and do not output other information.
   "top_factors": [
     "<factor_1>",
     "<factor_2>",
-    "<factor_3>",
+    "<factor_3>"
   ]
 }}""",
     23: """Suppose you are a man who, yesterday, had condomless anal sex with someone whose HIV status you're unsure of. Consider the foilowing factors of two different HIV testing plans: Test 1 and Test 2:
@@ -283,7 +283,7 @@ Output your result in JSON format, and do not output other information.
   "top_factors": [
     "<factor_1>",
     "<factor_2>",
-    "<factor_3>",
+    "<factor_3>"
   ]
 }}"""
  }
