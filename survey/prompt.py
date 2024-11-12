@@ -189,7 +189,7 @@ Output your result in JSON format, and do not output other information.
     "<factor_3>",
   ]
 }}""",
-    39: """"Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following factors:
+    39: """Suppose you are the head of a household in the Indian state of {state}. You currently own a traditional stove and use it to cook food. Suppose you are choosing between two improved cooking stoves to purchase: Stove 1 and Stove 2. Consider the following factors:
 
 - cost: Stove 1 costs {price1} Rupees. Stove 2 costs {price2} Rupees.
 - fuel_consumption: Stove 1 consumes {fuel1} your current stove. Stove 2 consumes {fuel2} your current stove.
