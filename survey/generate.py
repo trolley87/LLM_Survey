@@ -88,12 +88,286 @@ def convert5():
     json_output = json.dumps(json_prompts, indent=2)
 
     # Save the JSON output to a file
-    with open('Survey_05_20241101_resample_2000_v2.json', 'w') as f:
+    with open('Survey_05_20241101_resample_2000_v1.json', 'w') as f:
         f.write(json_output)
 
     # Create a DataFrame from csv_data and save it as a CSV, ensuring data matches JSON
     csv_df = pd.DataFrame(csv_data)
     csv_df.to_csv('Survey_05_20241101_attributes_v1.csv', index=False)
+
+def convert502():
+    # Read the input data from DDModeChoice.txt
+    data = pd.read_csv('datasets/5/5.txt', sep='\t')
+    data.to_csv('datasets/5/5.csv', index=False, header=True)
+    df = pd.read_csv('datasets/5/5.csv')
+    df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
+
+    # Define mapping dictionaries
+    choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"}
+    gender_map = {0: "male", 1: "female"}
+    season_map = {1: "winter", 0: "summer"}
+    car_avail_map = {0: "No car", 1: "A car"}
+    school_location_map = {0: "non Same Shore", 1: "Same Shore"}
+    cb_location_map = {0: "not close", 1: "close"}
+    same_shore_map = {0: "different shores", 1: "same shore"}
+
+    # Create lists to store the CSV data
+    csv_data = []
+
+    # Create the JSON prompt generation function
+    def create_json_prompt(row):
+        gender_str = gender_map[row['Gender']]
+        distance_str = round(row['Distance'], 2)
+        car_avail_str = car_avail_map[row['CarAvail']]
+        season_str = season_map[row['Season']]
+        choice_str = choice_map[row['Choice']]
+        school_location_str = school_location_map[row['School_location']]
+        cb_location_str = cb_location_map[row['CB_location']]
+        same_shore_str = same_shore_map[row['same_shore']]
+        ID_num = int(row['ID'])
+
+        formatted_prompt = prompt_templates[502].format(
+            distance=f"{distance_str} KM",
+            school_location=school_location_str,
+            grade=row['Grade'],
+            age=row['Age'],
+            gender=gender_str,
+            car_availability=car_avail_str,
+            season=season_str,
+            cb_location=cb_location_str,
+            same_shore=same_shore_str,
+            effort=row['Leistung']
+        )
+
+        # Append data for CSV
+        csv_data.append({
+            "ID": ID_num,
+            "distance": distance_str,
+            "school_location": school_location_str,
+            "same_shore": same_shore_str,
+            "cb_location": cb_location_str,
+            "grade": row['Grade'],
+            "age": row['Age'],
+            "gender": gender_str,
+            "car_availability": car_avail_str,
+            "season": season_str,
+            "effort": row['Leistung'],
+            "original_choice": choice_str
+        })
+
+        # Structure the prompt and result as a dictionary (JSON-like structure)
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "id": ID_num,
+                "original_transportation_choice": choice_str
+            }
+        }
+        return json_prompt
+
+    # List to store all JSON prompts
+    json_prompts = []
+    # df = df.dropna()
+
+    # Pick a random sample of 2000 rows and iterate over them
+    sampled_df = df.head(2000)
+    for _, row in sampled_df.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    # Convert the list of JSON prompts to a JSON string
+    json_output = json.dumps(json_prompts, indent=2)
+
+    # Save the JSON output to a file
+    with open('Survey_0502_resample_2000_v1.json', 'w') as f:
+        f.write(json_output)
+
+    # Create a DataFrame from csv_data and save it as a CSV, ensuring data matches JSON
+    csv_df = pd.DataFrame(csv_data)
+    csv_df.to_csv('Survey_0502_attributes_v1.csv', index=False)
+
+def convert503():
+    # Read the input data from DDModeChoice.txt
+    data = pd.read_csv('datasets/5/5.txt', sep='\t')
+    data.to_csv('datasets/5/5.csv', index=False, header=True)
+    df = pd.read_csv('datasets/5/5.csv')
+    df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
+
+    # Define mapping dictionaries
+    choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"}
+    gender_map = {0: "male", 1: "female"}
+    season_map = {1: "winter", 0: "summer"}
+    car_avail_map = {0: "No car", 1: "A car"}
+    school_location_map = {0: "non Same Shore", 1: "Same Shore"}
+    cb_location_map = {0: "not close", 1: "close"}
+    same_shore_map = {0: "different shores", 1: "same shore"}
+
+    # Create lists to store the CSV data
+    csv_data = []
+
+    # Create the JSON prompt generation function
+    def create_json_prompt(row):
+        gender_str = gender_map[row['Gender']]
+        distance_str = round(row['Distance'], 2)
+        car_avail_str = car_avail_map[row['CarAvail']]
+        season_str = season_map[row['Season']]
+        choice_str = choice_map[row['Choice']]
+        school_location_str = school_location_map[row['School_location']]
+        cb_location_str = cb_location_map[row['CB_location']]
+        same_shore_str = same_shore_map[row['same_shore']]
+        ID_num = int(row['ID'])
+
+        formatted_prompt = prompt_templates[503].format(
+            distance=f"{distance_str} KM",
+            school_location=school_location_str,
+            grade=row['Grade'],
+            age=row['Age'],
+            gender=gender_str,
+            car_availability=car_avail_str,
+            season=season_str,
+            cb_location=cb_location_str,
+            same_shore=same_shore_str,
+            effort=row['Leistung']
+        )
+
+        # Append data for CSV
+        csv_data.append({
+            "ID": ID_num,
+            "distance": distance_str,
+            "school_location": school_location_str,
+            "same_shore": same_shore_str,
+            "cb_location": cb_location_str,
+            "grade": row['Grade'],
+            "age": row['Age'],
+            "gender": gender_str,
+            "car_availability": car_avail_str,
+            "season": season_str,
+            "effort": row['Leistung'],
+            "original_choice": choice_str
+        })
+
+        # Structure the prompt and result as a dictionary (JSON-like structure)
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "id": ID_num,
+                "original_transportation_choice": choice_str
+            }
+        }
+        return json_prompt
+
+    # List to store all JSON prompts
+    json_prompts = []
+    # df = df.dropna()
+
+    # Pick a random sample of 2000 rows and iterate over them
+    sampled_df = df.head(2000)
+    for _, row in sampled_df.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    # Convert the list of JSON prompts to a JSON string
+    json_output = json.dumps(json_prompts, indent=2)
+
+    # Save the JSON output to a file
+    with open('Survey_0503_resample_2000_v1.json', 'w') as f:
+        f.write(json_output)
+
+    # Create a DataFrame from csv_data and save it as a CSV, ensuring data matches JSON
+    csv_df = pd.DataFrame(csv_data)
+    csv_df.to_csv('Survey_0503_attributes_v1.csv', index=False)
+
+
+def convert504():
+    # Read the input data from DDModeChoice.txt
+    data = pd.read_csv('datasets/5/5.txt', sep='\t')
+    data.to_csv('datasets/5/5.csv', index=False, header=True)
+    df = pd.read_csv('datasets/5/5.csv')
+    df['same_shore'] = (df['School_location'] == df['CB_location']).astype(int)
+
+    # Define mapping dictionaries
+    choice_map = {1: "walk", 2: "bike", 3: "transit", 4: "car"}
+    gender_map = {0: "male", 1: "female"}
+    season_map = {1: "winter", 0: "summer"}
+    car_avail_map = {0: "No car", 1: "A car"}
+    school_location_map = {0: "non Same Shore", 1: "Same Shore"}
+    cb_location_map = {0: "not close", 1: "close"}
+    same_shore_map = {0: "different shores", 1: "same shore"}
+
+    # Create lists to store the CSV data
+    csv_data = []
+
+    # Create the JSON prompt generation function
+    def create_json_prompt(row):
+        gender_str = gender_map[row['Gender']]
+        distance_str = round(row['Distance'], 2)
+        car_avail_str = car_avail_map[row['CarAvail']]
+        season_str = season_map[row['Season']]
+        choice_str = choice_map[row['Choice']]
+        school_location_str = school_location_map[row['School_location']]
+        cb_location_str = cb_location_map[row['CB_location']]
+        same_shore_str = same_shore_map[row['same_shore']]
+        ID_num = int(row['ID'])
+
+        formatted_prompt = prompt_templates[504].format(
+            distance=f"{distance_str} KM",
+            school_location=school_location_str,
+            grade=row['Grade'],
+            age=row['Age'],
+            gender=gender_str,
+            car_availability=car_avail_str,
+            season=season_str,
+            cb_location=cb_location_str,
+            same_shore=same_shore_str,
+            effort=row['Leistung']
+        )
+
+        # Append data for CSV
+        csv_data.append({
+            "ID": ID_num,
+            "distance": distance_str,
+            "school_location": school_location_str,
+            "same_shore": same_shore_str,
+            "cb_location": cb_location_str,
+            "grade": row['Grade'],
+            "age": row['Age'],
+            "gender": gender_str,
+            "car_availability": car_avail_str,
+            "season": season_str,
+            "effort": row['Leistung'],
+            "original_choice": choice_str
+        })
+
+        # Structure the prompt and result as a dictionary (JSON-like structure)
+        json_prompt = {
+            "input": formatted_prompt,
+            "output": {
+                "id": ID_num,
+                "original_transportation_choice": choice_str
+            }
+        }
+        return json_prompt
+
+    # List to store all JSON prompts
+    json_prompts = []
+    # df = df.dropna()
+
+    # Pick a random sample of 2000 rows and iterate over them
+    sampled_df = df.head(2000)
+    for _, row in sampled_df.iterrows():
+        json_prompt = create_json_prompt(row)
+        json_prompts.append(json_prompt)
+
+    # Convert the list of JSON prompts to a JSON string
+    json_output = json.dumps(json_prompts, indent=2)
+
+    # Save the JSON output to a file
+    with open('Survey_0504_resample_2000_v1.json', 'w') as f:
+        f.write(json_output)
+
+    # Create a DataFrame from csv_data and save it as a CSV, ensuring data matches JSON
+    csv_df = pd.DataFrame(csv_data)
+    csv_df.to_csv('Survey_0504_attributes_v1.csv', index=False)
 
 
 def convert41():
@@ -1137,6 +1411,10 @@ def convert16():
 def main():
     # Maybe in future we can use command line arguments to specify which papers we convert
     # convert5()
+    # convert502()
+    convert503()
+    # convert504()
+
     # convert41()
     # convert9()
     # convert16()
@@ -1146,7 +1424,7 @@ def main():
     # convert21()
     # convert29()
     # convert38()
-    convert39()
+    # convert39()
     # convert24()
     # convert27()
     # convert22()

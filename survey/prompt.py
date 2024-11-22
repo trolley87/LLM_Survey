@@ -56,6 +56,138 @@ Output your result in JSON format, and do not output other information.
         "<factor_3>"
     ]
 }}""",
+
+    # add reasoning
+    502:  """You are a student deciding how to travel to school. Consider the following factors:
+
+- distance: {distance} km to school
+- school_location: School is on {school_location} of river Elbe
+- same_shore: School and city bike station are on {same_shore}
+- cb_location: Nearest city bike station is {cb_location} away from river Elbe
+- grade: You are in grade {grade}
+- age: You are {age} years old 
+- gender: You are a {gender} student
+- car_availability: {car_availability} is available for your use
+- season: It's currently {season}
+- effort: Physical effort needed to bike to school is {effort} KJ
+
+Based on these factors, think step-by-step to evaluate the situation and make a reasoned decision. Start by:
+	1.	Considering how each factor (e.g., distance, age, and season) influences the decision-making process.
+	2.	Comparing the suitability of each transportation mode (walk, bike, transit, car) based on the student’s circumstances.
+	3.	Ranking the top three factors that most significantly affect the decision, explaining why they matter the most.
+
+After reasoning through the steps, which mode of transportation would you choose to maximize your personal utility?
+Respond with:
+1 for walk
+2 for bike
+3 for transit
+4 for car
+
+Please also rank the top 3 factors in your decision with the order of importance from the following:
+distance, school_location, same_shore, cb_location, grade, age, gender, car_availability, season, and effort.
+
+Output your result in JSON format, and do not output other information. 
+{{
+    "reasoning": "<step-by-step explanation>",
+    "transportation_choice": <mode>,
+    "top_factors": [
+        "<factor_1>",
+        "<factor_2>",
+        "<factor_3>"
+    ]
+}}""",
+
+    # add some basic rules
+    503:  """You are a student deciding how to travel to school. Consider the following factors:
+
+- distance: {distance} km to school
+- school_location: School is on {school_location} of river Elbe
+- same_shore: School and city bike station are on {same_shore}
+- cb_location: Nearest city bike station is {cb_location} away from river Elbe
+- grade: You are in grade {grade}
+- age: You are {age} years old 
+- gender: You are a {gender} student
+- car_availability: {car_availability} is available for your use
+- season: It's currently {season}
+- effort: Physical effort needed to bike to school is {effort} KJ
+
+Using a discrete choice framework, think step-by-step to evaluate the utility of each transportation mode (walk, bike, transit, car) and choose the one that maximizes your personal utility. Consider the following steps in your decision-making process:
+
+1. Evaluate how each factor (e.g., distance, car availability, and effort) influences the utility of each transportation mode. Be specific about how each factor contributes positively or negatively to the perceived utility.
+2. Compare the transportation modes by calculating their relative utility based on your circumstances.
+3. Choose the mode with the maximum utility result as your answer.
+
+After reasoning through the steps, which mode of transportation would you choose to maximize your personal utility?
+Respond with:
+1 for walk
+2 for bike
+3 for transit
+4 for car
+
+Please also rank the top 3 factors in your decision with the order of importance from the following:
+distance, school_location, same_shore, cb_location, grade, age, gender, car_availability, season, and effort.
+
+Output your result in JSON format, and do not output other information. 
+{{
+    "reasoning": "<step-by-step explanation>",
+    "transportation_choice": <mode>,
+    "top_factors": [
+        "<factor_1>",
+        "<factor_2>",
+        "<factor_3>"
+    ]
+}}""",
+
+
+    # add results from the paper modeling
+    504:  """You are a student deciding how to travel to school. Consider the following factors:
+
+- distance: {distance} km to school
+- school_location: School is on {school_location} of river Elbe
+- same_shore: School and city bike station are on {same_shore}
+- cb_location: Nearest city bike station is {cb_location} away from river Elbe
+- grade: You are in grade {grade}
+- age: You are {age} years old 
+- gender: You are a {gender} student
+- car_availability: {car_availability} is available for your use
+- season: It's currently {season}
+- effort: Physical effort needed to bike to school is {effort} KJ
+
+Key Considerations are:
+1. During winter, students are more likely to prefer cars or public transport due to the higher risk and discomfort of walking or biking in cold or icy conditions. However, for short distances (<3 km), walking remains a viable alternative.
+2. Effort-related factors (such as energy expenditure or altitude variance) significantly impact mode choices for biking and walking, reducing their utility with higher effort.
+3. Distance impacts vary by mode and season: the utility of walking declines more steeply per km in summer than in winter, while biking utility shows similar declines across seasons.
+4. Gender differences influence mode choice; female students are generally less likely to choose biking due to perceived risks.
+5. Older students (higher grades) are more likely to bike, as they are considered more responsible and capable of managing risks.
+6. If the student and school are on the same side of the river (same shore), biking becomes more attractive, particularly for distances <7 km, due to reduced expected delays.
+
+Based on these factors, think step-by-step to evaluate the situation and make a reasoned decision. Start by:
+	1.	Considering how each factor (e.g., distance, age, and season) influences the decision-making process.
+	2.	Comparing the suitability of each transportation mode (walk, bike, transit, car) based on the student’s circumstances.
+	3.	Ranking the top three factors that most significantly affect the decision, explaining why they matter the most.
+
+After reasoning through the steps, which mode of transportation would you choose to maximize your personal utility?
+Respond with:
+1 for walk
+2 for bike
+3 for transit
+4 for car
+
+Please also rank the top 3 factors in your decision with the order of importance from the following:
+distance, school_location, same_shore, cb_location, grade, age, gender, car_availability, season, and effort.
+
+Output your result in JSON format, and do not output other information. 
+{{
+    "reasoning": "<step-by-step explanation>",
+    "transportation_choice": <mode>,
+    "top_factors": [
+        "<factor_1>",
+        "<factor_2>",
+        "<factor_3>"
+    ]
+}}""",
+
+
 #comments for #9:
 #3. **Key Findings:**
   # - For each additional $1.00 that one pays per ounce of beer, an individual is willing to pay a premium of 7.4 cents per ounce for the sustainable version.
